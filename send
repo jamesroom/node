@@ -1,0 +1,7 @@
+#!/bin/bash
+addr=localhost:8000;
+if [ -n "$1" ]
+then 
+  addr=$addr$1;
+fi
+curl $addr;

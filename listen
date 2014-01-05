@@ -1,0 +1,33 @@
+#!/bin/bash
+# listen the bash file directory have any file is changed 
+state=true
+file_name="sever.js";
+old=0;
+while [ $state = 'true' ]
+do 
+	sleep 1
+	time=`ls -tl --full-time  | grep -o [0-9]*:[0-9]*:[0-9]* | head -n 1`;
+	if [ $time != $old ]
+	then 
+		old=$time ;echo "now ,node server.js begain";
+		#killed the node server.js progress
+		count=`ps x | grep -c "node server.js"`
+		echo "this is count:$count";
+#		echo `expr length $count`
+		if [ "$count"  != "1" ]
+		then
+			echo "it is not equile 1"
+			pid=`ps x | grep  "node server.js" | grep -v grep | grep -o "[0-9]*" | head -n 1`;
+			echo "this is search $pid"
+			if [ -n $pid ]
+			then kill $pid;
+			fi
+		fi
+		node server.js &
+#		then 
+#			echo "node js have been restart";
+#		fi
+#		else
+#			echo "there is wrong with nodejs restart"
+	fi;
+done
