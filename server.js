@@ -2,7 +2,8 @@ var http = require("http"),
     router = require("./config/router"),
     URL = require("url"),
     util = require("util"),
-    fs = require("fs");
+    fs = require("fs"),
+    analysis = require("./config/analysis")
 
 http.createServer(function(request, response) {
     var paths = URL.parse(request.url,true);
@@ -39,20 +40,16 @@ http.createServer(function(request, response) {
                         'view':'',
                         'data':{
                           'title':"JOCKJS API",
-                           'dom':[
-                               {title:'J.g("id")',text:"获取{id}的dom对象"}
+                           'item':[
+                               {item_title:'J.g("id")',item_text:"获取{id231}的dom对象"},
+                               {item_title:'J.g("id")',item_text:"获取{id123123}的dom对象"},
+                               {item_title:'J.g("id")',item_text:"获取{id123123132}的dom对象"}
                            ]
                         }
 
                     }
-                    var obj1 = {
-                        'view':'',
-                        'data':function(){
 
-                        }
-
-                    }
-
+                    var data = analysis(data,obj1.data)
                     response.write(data)
                     response.end();
 
@@ -64,11 +61,3 @@ http.createServer(function(request, response) {
 
     }
 }).listen(8000);
-function analysis(data,obj){
-    var i;
-    for(i in obj){
-        var tmp = obj[i];
-
-
-    }
-}
