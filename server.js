@@ -35,6 +35,8 @@ http.createServer(function(request, response) {
                response.writeHead(200, {"Content-Type": "text/html"});
              //  res.write("hello world");
               // res.end();
+               var db = require("./config/db");
+               db();
                 var data = fs.readFile(view,"utf-8",function(err,data){
                     var obj1 = {
                         'view':'',

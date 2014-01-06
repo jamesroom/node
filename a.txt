@@ -1,2 +1,5 @@
-sadfasdf
-a.txt
+jobs:
+    jobs -l //list of the jobs
+            //control + z is stoped the jobs
+    bg 2 //background start the 2 jobs
+    fg 2 // front screen start the jobs.

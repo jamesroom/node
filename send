@@ -4,4 +4,4 @@ if [ -n "$1" ]
 then 
   addr=$addr$1;
 fi
-curl $addr;
+curl $addr > log.txt;
