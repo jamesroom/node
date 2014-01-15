@@ -30,11 +30,6 @@ Jmap = function(options){
             o.elm.style.background = 'none';
             this.setWH();
             this.createMap();
-//            var s = this;
-//            map.addEventListener('resize',function(){
-//	            console.log('ddddddddddddd')
-//                s.setWH(true);
-//            });
         },
         setWH:function(rw){
             var es = o.elm.style;
