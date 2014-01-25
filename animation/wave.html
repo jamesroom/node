@@ -82,6 +82,7 @@
                 x:W/2,
                 y:H/2
             }
+
             var angle = 360 / 60;
 
 
@@ -89,11 +90,58 @@
 
         }
 
+        /**
+         * 计算每一px弧度对应的角度
+         * @param r
+         * @returns {number}
+         */
+
+        function calcEveryRadionToAngle(r){
+            var pi = Math.PI;
+            return 90/(pi*pi*r*r);
+        }
+        var R =200;
+        var angle = calcEveryRadionToAngle(R)
+
+        function recycle(r,angle){
+
+
+
+            var s = Math.floor(2*Math.PI*r);
+            console.log(s);
+            var x, y,i=0;
+            ctx.save();
+            ctx.translate(500,300);
+            timer(i,s,angle,R);
+
+          //  ctx.restore();
+        }
+        recycle(R,angle);
+
+        function timer(i,s,angle,r){
+            if(i<s){
+                var hudu = (2*Math.PI / 360) * angle * i;
+                var x=  Math.cos(hudu*i)*r;
+                var y= Math.sin(hudu*i)*r;
+                ctx.beginPath();
+                ctx.moveTo(x,y);
+                ctx.arc(x,y,2,0,2*Math.PI,false);
+                i+=10
+                ctx.closePath();
+                ctx.fill();
+                setTimeout(timer(i,s,angle,r),5000);
+
+            }
+        }
+
+
+
+
 
         setInterval(function(){
             tran_key++;
         },10)
-        setInterval(draw, 80);
+        //setInterval(draw, 80);
     }
 </script>
 </body>
