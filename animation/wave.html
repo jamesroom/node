@@ -103,6 +103,21 @@
         var R =200;
         var angle = calcEveryRadionToAngle(R)
 
+        var _proSetTimeout= window.setTimeout;
+        window.setTimeout=function(fun,delay){
+            var type = Object.prototype.toString.call(fun);
+            if(type == '[object Function]'){
+                var  params = Array.prototype.slice.call(arguments,2);
+                var f = function(){
+                    fun.apply(null,params);
+                }
+                return _proSetTimeout(f,delay)
+
+            }
+            return _proSetTimeout;
+
+        }
+
         function recycle(r,angle){
 
 
@@ -117,20 +132,30 @@
           //  ctx.restore();
         }
         recycle(R,angle);
+        /**
+         * 一px对应于多少度
+         * 公式，先求出每px对应多少弧度值：360/(2*Math.PI*R)
+         * 所以n度对应的弧度值为：n*Math.pi/180;
+         * 坐标为：x = Math.cos(n*Math.pi/180)*R;
+         * 坐标为：y = Math.sin(n*Math.pi/180)*R;
+         * @type {number}
+         */
+        var sep =180/(Math.PI * R);
 
         function timer(i,s,angle,r){
             if(i<s){
-                var hudu = (2*Math.PI / 360) * angle * i;
-                var x=  Math.cos(hudu*i)*r;
-                var y= Math.sin(hudu*i)*r;
+               var hudu = (i*sep*Math.PI/180);
+               var x=  Math.cos(hudu)*r;
+                var y= Math.sin(hudu)*r;
                 ctx.beginPath();
                 ctx.moveTo(x,y);
                 ctx.arc(x,y,2,0,2*Math.PI,false);
-                i+=10
+                i+=10;//10个弧度值画一个点
                 ctx.closePath();
                 ctx.fill();
-                setTimeout(timer(i,s,angle,r),5000);
-
+                window.setTimeout(timer,40,i,s,angle,r);
+            }else{
+                
             }
         }
 
@@ -141,7 +166,7 @@
         setInterval(function(){
             tran_key++;
         },10)
-        //setInterval(draw, 80);
+  //      setInterval(draw, 80);
     }
 </script>
 </body>
