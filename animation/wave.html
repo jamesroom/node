@@ -90,6 +90,10 @@
 
         }
 
+        window.setTimeout = function(fun,delay){
+
+        }
+
         /**
          * 计算每一px弧度对应的角度
          * @param r
@@ -144,9 +148,9 @@
 
         function timer(i,s,angle,r){
             if(i<s){
-               var hudu = (i*sep*Math.PI/180);
-               var x=  Math.cos(hudu)*r;
-                var y= Math.sin(hudu)*r;
+                var hudu = (2*Math.PI*i*angle / 360 );
+                var x=  Math.cos(hudu*i)*r;
+                var y= Math.sin(hudu*i)*r;
                 ctx.beginPath();
                 ctx.moveTo(x,y);
                 ctx.arc(x,y,2,0,2*Math.PI,false);
