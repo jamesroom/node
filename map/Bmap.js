@@ -212,6 +212,7 @@
         function openOverlayWindow(p, openerOverlay){
             openWindow(p)
         }
+
         function clone (obj) {
             if (null == obj || "object" != typeof obj) return obj;
             var copy = obj.constructor();
@@ -226,9 +227,11 @@
         }
         function addOverlay(param, overlayType, key) {
             var p = fn.clone(param);
-            p.latlng = p.latlng ? p.latlng : fn.getLatLng(p);
-            var _key = key||fn.buildOverlayKey(p.latlng), _type = overlayType || fn.overlaysType.overlay,
-                oldOverlay = fn.getOverlay(_type,_key), me;
+            p.latlng = p.latlng ? p.latlng : getLatLng(p);
+            var _key = key||buildOverlayKey(p.latlng),
+                _type = overlayType,
+                oldOverlay = getOverlay(_type,_key),
+                me;
             if(oldOverlay) return oldOverlay;
 
             function userOverlay(p){
@@ -240,8 +243,8 @@
                 this._locked = false;
                 this._CName = !!this.p.className ? this.p.className : '';
                 this._CHover = !!this.p.classHover ? this.p.classHover : '';
-                this._barOffsetX = (this.p.barOffset&&this.p.barOffset.x) ? this.p.barOffset.x : 0;
-                this._barOffsetY = (this.p.barOffset&&this.p.barOffset.y) ? this.p.barOffset.y : 0;
+                this._barOffsetX = this.p.x || 0;
+                this._barOffsetY = this.p.y || 0;
                 me = this;
                 var div = document.createElement("DIV");
                 div.style.position = "absolute";
@@ -251,7 +254,7 @@
                 if(this._CName){
                     div.className = me._CName;
                 }
-                div.innerHTML = this.p.barInfo;
+                div.innerHTML = this.p.html;
                 div.title = !!this.p.title ? this.p.title : '';
 
                 if(this.p.showInfo){
@@ -300,13 +303,18 @@
                     this._div.style.visibility = (b) ? "visible" : "hidden";
                 }
             }
+            userOverlay.prototype.removeOverlay=function(){
+                J.un(this._div);
+                map.removeOverlay(this)
+            }
             var uO = new userOverlay(p);
+            uO.key = _key;
             map.addOverlay(uO);
             fn.pushOverlayList(_type,_key,uO);
             return uO;
         }
         function addPloyline(path, PloylineOptions, overlayType, key){
-            var _key = key||this.buildOverlayKey(PloylineOptions.latlng), _type = overlayType || this.overlaysType.ployline;
+            var _key = key||buildOverlayKey(PloylineOptions.latlng), _type = overlayType || this.overlaysType.ployline;
             if(getOverlay(overlaysType.ployline,_key)) return;
             var _PloylineOptions = Jock.extend({
                 strokeColor : "#0030ff",

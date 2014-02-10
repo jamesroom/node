@@ -139,29 +139,48 @@
 
         function OverlayCenter(option){
             var defOpts= {
-                html:'',
-                onClick:null,
+                html:'',//标点要显示html
                 onMouseOver:null,
                 onMouseOut:null,
-                onClick:null
-
-            },opts;
+                onClick:null,
+                onItemBuild:null,
+                overlaysType:'overlays',//标点的类型
+                showInfo:'',//点击要展示的文本,
+                className:'',//默认展示的Class
+                classHover:'',//鼠标放上去展示的样式
+                x:0,//x轴要偏移的像素
+                y:0//y轴要偏 移的像素
+            },opts,preCache;
             (function(){
-                opts= J.mix(defOpts,option)
+                opts= J.mix(defOpts,option);
+
 
             })();
             function addOverlay(data){
 
             }
-            function onClick(data){
+            function onClick(elm,data){
+                MSG.overlayClick({
+                    target:elm,
+                    data:data
+                });
+            }
+            function onMouseOver(elm,data){
+                MSG.overlayMouseOver({
+                    target:elm,
+                    data:data
+                });
 
             }
-            function onMouseOver(data){
-
-
+            function onMouseOut(elm,data){
+                MSG.overlayMouseOut({
+                    target:elm,
+                    data:data
+                });
             }
-            function onMouseOut(data){
-
+            function remove(elm){
+                elm.remove();
+                MSG
             }
 
             /**
@@ -169,19 +188,60 @@
              * @param data array
              */
             function addOverlays(data){
-                var i,len=data.length;
+                var i,len=data.length,itemOpts,item,key,tmpObj={},removeHandler;
                 for(i=0;i<len;i++){
+                    itemOpts = onItemBuild(data[i]);
+                    if(!html) continue;
+                    itemOpts = J.mix(defOpts,itemOpts,true);
+                    key = buildOverlayKey(itemOpts);
+                    if(!preCache[key+itemOpts.overlaysType]){
+                        item =  context.addOverLays(itemOpts,itemOpts.overlaysType,key);
+                        item.onClick = function(){
+                            var ret = itemOpts.onClick&&itemOpts.onClick.call(this);
+                            if(ret === false) return;
+                            onClick(item,itemOpts);
 
+                        }
+                        item.onMouseOver = function(){
+                            var ret = onMouseOver.call(this);
+                            if(ret === false) return;
+                            onMouseOver(item,itemOpts);
+
+                        }
+
+                        item.onMouseOut = function(){
+                            var ret = onMouseOver.call(this);
+                            if(ret === false) return;
+                            onMouseOut(item,itemOpts);
+                        }
+                        tmpObj[key+itemOpts.overlaysType] = item;
+                    }
+                    for(i in preCache){
+                        remove(preCache[i]);
+                    }
+                    preCache = tmpObj;
                 }
             }
 
             /**
              * 为创建的Overlay创建参数
              */
-            function buildParams(){
-
+            function onItemBuild(data){
+                var tmp ;
+                var html = opts.onItemBuild&& (tmp =opts.onItemBuild(data))?opts.html:tmp;
+                return html;
             }
 
+            /**
+             * 移除上次ajax所添加的数据，并移除不应该显示的点
+             * data OverlaysArray
+             */
+            function removeOverlays(data){
+
+            }
+            function buildOverlayKey(latlng){
+                return latlng.lat+'_'+latlng.lng;
+            }
             function k_means(){
 
 
