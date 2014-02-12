@@ -1,0 +1,4 @@
+/// require('map.pad');
+(function(){
+
+})();;
