@@ -1,94 +1,84 @@
-/**
- * Aifang Javascript Framework.
- * Copyright 2012 ANJUKE Inc. All rights reserved.
- *
- * 表单验证组件
- *
- * @path: map/core.js
- * @author: lunjiang
- * @version: 1.0
- * @date: 2014/02/08
- *
- */
-
 
 /// require('map.Bload');
 /// require('page.page');
 
 
 (function(J){
+    function Bmap(opption){
+        var baseDomain = "http://pages.lunjiang.dev.aifcdn.com/";
+        var defOpts ={
+            id:'',
+            lng:0,
+            lat:0,
+            latlng:0,
+            zoom:15,
+            mark:0,
+            u3d:0,
+            city:'',
+            ctype:1,
+            cdn:baseDomain+'img/',
+            ezoom:0,
+            top:0,
+            d:true,//debug
+            minz:0,
+            maxz:0,
+            scale:0,
+            onMoveStart:null,
+            onMoveEnd:null,
+            onZoomStart:null,
+            onZoomEnd:null,
+            target:document//自定主事件触对的对象
+        },elm,isLoaded;
 
-    var baseDomain = "http://pages.lunjiang.dev.aifcdn.com/";
-    var defOpts ={
-        elm:'',
-        lng:0,
-        lat:0,
-        latlng:0,
-        zoom:15,
-        mark:0,
-        u3d:0,
-        city:'',
-        ctype:1,
-        cdn:baseDomain+'img/',
-        ezoom:0,
-        top:0,
-        d:true,//debug
-        minz:0,
-        maxz:0,
-        scale:0,
-        onMoveStart:null,
-        onMoveEnd:null,
-        onZoomStart:null,
-        onZoomEnd:null
-    };
+        var io = {
+                title: '',
+                popInfo: '',
+                barInfo: '',
+                icon: 'http://pages.lunjiang.dev.aifcdn.com/img/jmap/1/mapMarker-Default.png',
+                size: {
+                    w: 35,
+                    h: 34
+                },
+                offset: {
+                    x: 9,
+                    y: 34
+                },
+                imgOffset: {x: 0, y: 0}, lat: 0, lng: 0,
+                latlng: {}
+            },opts = {},
+            OVERLAYS = {},
+            map,
+            skipOvList = [];
 
-    var io = {
-        title: '',
-        popInfo: '',
-        barInfo: '',
-        icon: 'http://pages.lunjiang.dev.aifcdn.com/img/jmap/1/mapMarker-Default.png',
-        size: {w: 35, h: 34}, offset: {x: 9, y: 34},
-        imgOffset: {x: 0, y: 0}, lat: 0, lng: 0,
-        latlng: {}
-    },o = {},
-    OVERLAYS = {},
-        map,
-    skipOvList = [];
-
-
-    function Bmap(ops){
-
-        (function(){
-            window.mapData = {};
-            window.mapData.base = {};
-            window.mapData.entity = {};
-            window.mapData.sign = {};
-            window.map = {};
-            o = J.mix( defOpts,ops || {});
-            o.latlng = getLatLng(o);
-            if (!o.elm || typeof BMap!=='object')
-                return;
-            o.elm=J.g(o.elm);
-            o.elm.setStyle({background:'none'});
+        function init(){
+            opts = J.mix( defOpts,opption || {});
+            opts.latlng = getLatLng(opts);
+            if (!opts.id || typeof BMap!=='object') return;
+            var elem = J.g(opts.id);
+            if(!elem){
+                alert('文档中未找到id：'+opts.id+'对像');
+                return false;
+            }
+            opts.elm=elem;
+            //opts.elm.setStyle({background:'none'});
             createMap();
-        })();
-
+        }
+        J.map.Bload(init);//加载完百度地图后自动实例化地图对像
 
         function createMap(){
-            map = new BMap.Map(o.elm, {
-                mapType: !!o.u3d && o.city != '' ? BMAP_PERSPECTIVE_MAP : BMAP_NORMAL_MAP,
-                minZoom: o.minz ? o.minz : 3,
-                maxZoom: o.maxz ? o.maxz : 18
+            map = new BMap.Map(opts.id, {
+                mapType: !!opts.u3d && opts.city != '' ? BMAP_PERSPECTIVE_MAP : BMAP_NORMAL_MAP,
+                minZoom: opts.minz ? opts.minz : 3,
+                maxZoom: opts.maxz ? opts.maxz : 18
             });
+            if (!!opts.u3d && opts.city != '')
+                map.setCurrentCity(opts.city);
+            map.centerAndZoom(new BMap.Point(opts.lng, opts.lat), opts.zoom);
 
-            if (!!o.u3d && o.city != '')
-                map.setCurrentCity(o.city);
-
-            map.centerAndZoom(new BMap.Point(o.lng, o.lat), o.zoom);
-            if (!!o.mark){
-                var marker = addMarker(o,'center');
+            if (!!opts.mark){
+                var marker = addMarker(opts,'center');
             }
-            if (!!o.ezoom)
+            if (!!opts.ezoom)
                 map.enableScrollWheelZoom();  // 开启鼠标滚轮缩放
             map.enableKeyboard();         // 开启键盘控制
             map.enableContinuousZoom();   // 开启连续缩放效果
@@ -96,16 +86,17 @@
 
             var ctrl_nav = new BMap.NavigationControl({
                 anchor: BMAP_ANCHOR_TOP_LEFT,
-                type: !!o.ctype ? BMAP_NAVIGATION_CONTROL_LARGE : BMAP_NAVIGATION_CONTROL_ZOOM
+                type: !!opts.ctype ? BMAP_NAVIGATION_CONTROL_LARGE : BMAP_NAVIGATION_CONTROL_ZOOM
             });
             map.addControl(ctrl_nav);
-
-            if(!!o.scale){
+            if(!!opts.scale){
                 var ctrl_scale = new BMap.ScaleControl({
                     anchor: BMAP_ANCHOR_BOTTOM_LEFT
                 });
                 map.addControl(ctrl_scale);
             }
+            J.fire(opts.target,'mapLoaded',map,true);//地图实例化完毕发
+
         }
         function setOverlaysVisible(t, visible, skip){
             var ovs = OVERLAYS[t];
@@ -132,7 +123,7 @@
             OVERLAYS[t][k] = o;
         }
         function getLatLng (p) {
-            var p = p || o;
+            var p = p || opts;
             return new BMap.Point(p.lng, p.lat);
         }
         function getMap(){
@@ -395,13 +386,13 @@
             setCenter:setCenter,
             getGeocoder:getGeocoder,
             addMarker:addMarker,
-            getOverlays:getOverlays
+            getOverlays:getOverlays,
+            getMap:getMap
 
         }
 
 
     }
-
 
     J.map.bmap = Bmap;
 
