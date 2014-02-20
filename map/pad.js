@@ -3,8 +3,10 @@
 (function(){
    function pad(opption){
        var defOpts ={
-           url:'http://shanghai.release.lunjiang.dev.anjuke.com/newmap/search2',
-           id: "jmap_fill",
+          // url:'http://sh.lunjiang.zu.dev.anjuke.com/newmap/search2',
+               url:'http://sh.release.lunjiang.dev.anjuke.com/newmap/search2',
+
+               id: "jmap_fill",
            lat: "31.230246775887",
            lng: "121.48246298372",
            mark: 0,
@@ -28,12 +30,8 @@
                containerId=opts.id;
            buildContainer(containerId);
            buildList(listId);
-
            map =  J.map.core(opts);
            bindEvent();
-
-           console.log(map)
-           //map.getData();
        }
        init();
        function bindEvent(){
@@ -41,27 +39,68 @@
                buildContainer();
                buildList();
            });
-           J.on(opts.target,map.eventType.overlay.click,function(data){
-               alert(1);
-               console.log(data);
-           })
+           /**
+            * overlay click event
+            */
+           J.on(opts.target,map.eventType.overlay.click,function(event){
+               var data = event.data;
+               if(data.zoom == 12 || data.zoom == 11){
+                   map.setCenter(data.lng,data.lat,14);
+               }
+           });
        }
        function beforeRequest(data){
            //points.swlat + "," + points.nelat + "," + points.swlng + "," + points.nelng;
-           return J.mix(data,{
+           var ret =J.mix(data,{
                model:1,
                order:null,
                p:1,
-               bounds:data.swlat + "," + data.nelat + "," + data.swlng + "," + data.nelng,
-               zoom:13
-           })
+               bounds:data.swlat + "," + data.nelat + "," + data.swlng + "," + data.nelng
+           });
+           if(ret.zoom == 14){
+              ret.model = 2;
+           }
+           return ret;
        }
        function onResult(data){
+           buildListItem(data&&data.props&&data.props.list);
+           if(data.zoom == 14){
+              if(data.comms.length>25){
+                   data.comms.length= 25;
+               }
+               return data.comms;
+           }
            return data.groups;
        }
        function onItemBuild(item){
+           if(item.zoom == 14){
+             //  item.htuml
+               item.html='<div class="OverlayB"><b>'+item.propCount+'套｜</b>'+item.truncateName+'<span class="tip"></span></div>';
+               return
+           }
+           item.x=-37.5;
+           item.y=-37.5;
            item.html = '<div class="OverlayCom OverlayA"><b>'+item.areaName+'</b><br/><p>'+item.propCount+'</p></div>';
-           return item;
+       }
+       function buildListItem(data){
+
+           if(!data){
+               return false;
+           }
+            var html = [],tmp='';
+           J.each(data,function(k,t){
+               tmp = '<li class="">' +
+                   '<a href="'+t['prop_url']+'" class="pi_a_img" title="'+t['img_title']+'" alt="'+t['img_title']+'" target="_blank">'+
+                   '<img height="100" width="133" id="prop_2_a"  alt="'+t['img_title']+'" src="'+t['img_url']+'">'+
+                   '</a>'+
+                   '<div class="pi_info">'+
+                   '<a data-soj="'+t["soj"]+'" href="'+t["prop_url"]+'" target="_blank">'+t["title"]+'</a>'+
+                   '<div class="pi_address"><span>'+t['community_name']+'</span></div>'+
+                   '<div class="pi_basic"><span>'+t['room_num']+'室'+t['hall_num']+'厅'+"</span></div>"+
+                   '<div class="pi_sub"><span class="pi_s_price">'+t['price']+'</span>元/月</div></li>';
+               html.push(tmp);
+           })
+           J.g("p_list").html(html.join(''));
        }
 
        /**

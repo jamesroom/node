@@ -64,7 +64,8 @@
             //opts.elm.setStyle({background:'none'});
             createMap();
         }
-        J.map.Bload(init);//加载完百度地图后自动实例化地图对像
+        init();
+        //J.map.Bload(init);//加载完百度地图后自动实例化地图对像
 
         function createMap(){
             map = new BMap.Map(opts.id, {
@@ -243,6 +244,10 @@
                     me.onClick&&me.onClick();
                     me.p.showInfo&&openOverlayWindow(me.p, me)
                 });
+                J.on(div,'touchend',function(){
+                    me.onClick&&me.onClick();
+                    me.p.showInfo&&openOverlayWindow(me.p, me)
+                });
                 J.on(div,"mouseover", function(){
                     me.setOver();
                 });
@@ -254,7 +259,6 @@
                 return div
             }
             userOverlay.prototype.onClick = function(){
-               alert(1)
             }
             userOverlay.prototype.setOver = function(){
                 if(!this._locked){
@@ -372,6 +376,9 @@
                     callback.call(obj, result.point)
             });
         }
+        function getZoom(){
+            return map.getZoom();
+        }
 
         return {
             addOverlay:addOverlay,
@@ -380,7 +387,8 @@
             getGeocoder:getGeocoder,
             addMarker:addMarker,
             getOverlays:getOverlays,
-            getMap:getMap
+            getMap:getMap,
+            getZoom:getZoom
 
         }
 

@@ -21,45 +21,18 @@
 
         (function() {
             opts = J.mix(defOpts, opption);
-            stack = new Stack({
-                duplicate:true
-            });
-            stack.push(eventBind);
-            opts.callback = stack.run;
+
             context = new J.map.bmap(opts);
             dataCenter = DataCenter(opts);
             MSG = new MessageCenter(opts);
+            eventBind();
+
 
             overlayCenter = new OverlayCenter(opts);
         })();
 
 
 
-        function Stack(opption) {
-            var stack = [];
-            var defOpts = {
-                duplicate: true,//加入项是否允许重复
-                callback: function () {
-                }
-            }
-            function push(task) {
-              stack.push(task);
-            }
-
-            function unShift(task) {
-                stack.unshift(task);
-            }
-            function run(data) {
-                stack.length && (stack.shift()(data) !== false) && run();
-            }
-
-            return {
-                run: run,
-                push: push,
-                unShift: unShift,
-                stack: stack
-            }
-        }
 
 
 
@@ -70,9 +43,7 @@
             map = context.getMap();
             dataCenter.getData();
           //  var event = ['click','dbclick','rightclick','rightdblclick','maptypechange','maptypechange'];
-            map.addEventListener('click',function(){
-                //map click
-            });
+
             map.addEventListener('dbclick',function(){
                 //map click
             });
@@ -110,13 +81,20 @@
             });
             map.addEventListener('touchstart', function () {
                 //map click
+              //  alert("touchstart ")
             });
             map.addEventListener('touchmove', function () {
                 //map click
             });
             map.addEventListener('touchend', function () {
-                dataCenter.getData();
+                //dataCenter.getData();
             });
+            //click 执行操作就行了。
+            /*map.addEventListener('click',function(e){
+                e.preventDefault();
+
+                //map click
+            });*/
             map.addEventListener('longpress', function () {
                 //map click
             });
@@ -180,6 +158,7 @@
                     stack.push(getData);
                     return false;
                 }
+
                 var ajaxSetting={
                     url:opts.url,
                     type:opts.type,
@@ -219,6 +198,7 @@
              * @param data
              */
             function onResult(data){
+                data.zoom = context.getZoom();
                 var clientData = opts.onResult&&opts.onResult(data);
                 if(Object.prototype.toString.call(clientData) === "[object Array]"){
                     if(clientData&&!CACHE[key])CACHE[key] = clientData;
@@ -283,29 +263,20 @@
 
             }
             function onClick(elm,data){
-                MSG.overlayClick({
-                    target:elm,
-                    data:data
-                });
+                data.target = elm;
+                MSG.overlayClick(data);
             }
             function onMouseOver(elm,data){
-                MSG.overlayMouseOver({
-                    target:elm,
-                    data:data
-                });
-
+                data.target = elm;
+                MSG.overlayMouseOver(data);
             }
             function onMouseOut(elm,data){
-                MSG.overlayMouseOut({
-                    target:elm,
-                    data:data
-                });
+                data.target = elm;
+                MSG.overlayMouseOut(data);
             }
-            function remove(elm,data){
-                MSG.overlayRemove({
-                    target:elm,
-                    data:data
-                });
+            function remove(data){
+                data.remove();
+                MSG.overlayRemove(data);
             }
 
             /**
@@ -313,13 +284,19 @@
              * @param data array
              */
             function addOverlays(data){
-                var i,len=data.length,itemOpts,item,key,tmpObj={},removeHandler,j;
+                var i,len=data.length,itemOpts,item,key,tmpObj={},removeHandler, j,zoom=context.getZoom();
+
                 for(i=0;i<len;i++){
-                    itemOpts = onItemBuild(data[i]);
+
                     (function(itemOpts){
+                        itemOpts = data[i];
+                        itemOpts.zoom = zoom;
+                        itemOpts = onItemBuild(data[i]);
                         if(!itemOpts.html) return;
-                        itemOpts = J.mix(defOpts,itemOpts,true);
+
+                        //itemOpts = J.mix(defOpts,itemOpts,true);
                         key = dataCenter.getCacheKey(itemOpts);
+                        itemOpts.key = key;
                         /**
                          * 不在ｃａｃｈｅ里，需要创建，同时创建缓存
                          */
@@ -334,7 +311,6 @@
                                 var ret = onMouseOver.call(this);
                                 if(ret === false) return;
                                 onMouseOver(item,itemOpts);
-
                             };
                             item.onMouseOut = function(){
                                 var ret = onMouseOver.call(this);
@@ -357,7 +333,6 @@
                  * 删除本次请求与上次请求之外的点
                  */
                 for(j in preCache){
-                    console.log('remove',j);
                     remove(preCache[j]);
                 }
                 preCache = tmpObj;
@@ -368,8 +343,8 @@
              * 为创建的Overlay创建参数
              */
             function onItemBuild(data){
-                var ret;
-                return opts.onItemBuild&&(ret =opts.onItemBuild(data))?ret:opts.html;
+                opts.onItemBuild&&opts.onItemBuild(data);
+                return data;
             }
 
             /**
@@ -406,7 +381,7 @@
                 target:document,//触发对象
                 data:null//附带消息
             },opts,overlayEventType={
-                click:'overlayClick',
+                click:'map:overlayClick',
                 mouseOver:'overlayMouseOver',
                 mouseOut:'overlayMouseOut',
                 remove:'overlayRemove'
@@ -467,7 +442,6 @@
 
             }
         }
-        console.log(MSG)
         return J.mix({
             getData:dataCenter.getData,
             eventType:MSG.eventType
