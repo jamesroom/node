@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script type="text/javascript" src="fire.js"></script>
+</head>
+<body>
+    <script>
+        J.on(document,'overlayClick',function(e){
+            alert(21)
+        })
+        J.fire(document,'overlayClick',{clientData:'helloworld'},true);
+    </script>
+</body>
+</html>
