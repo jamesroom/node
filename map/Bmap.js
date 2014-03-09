@@ -219,6 +219,12 @@
 
             function userOverlay(p){
                 this.p = p;
+//                if(!userOverlay.prototype.initialize){
+//                    var _overlay = new Bmap.Overlay();
+//                    _overlay.initialize = function(map){
+//
+//                    }
+//                }
             }
             userOverlay.prototype = new BMap.Overlay();
             userOverlay.prototype.initialize = function(map){

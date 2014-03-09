@@ -53,47 +53,10 @@
 
 </canvas>
 <script type="text/javascript">
-    window.onload = function(){
-        var canvas = document.getElementById("canvas");
-        var ctx = canvas.getContext("2d");
-
-        var w = Util.getSize().width,h = Util.getSize().height;
-        ctx.clearRect(0,0,w,h);
-        canvas.setAttribute('width',w+'px');
-        canvas.setAttribute('height',h+'px');
-        var count =4;
-        while(count--){
-            var x = Math.random()*w;
-            var y = Math.random()*h;
-            Util.drawCircle(x,y,5);
-            ctx.stroke();
-            ctx.fill();
-        }
-
-
-
-    };
-
-    Util = {
-        context:document.getElementById("canvas").getContext("2d"),
-        getSize : function(){
-            return {
-                width:document.body.clientWidth,
-                height:document.body.clientHeight
-            }
-        },
-        drawCircle:function(x,y,r){
-            var ctx = this.context;
-            ctx.beginPath()
-            ctx.arc(x,y,5,0,2*Math.PI,true)
-            ctx.fillStyle='red';
-            ctx.closePath();
-
-
-        }
-    }
-
-
+    "use strict";
+    window.setTimeout(function(){
+        console.log(this);
+    },100);
 
 </script>
 

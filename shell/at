@@ -1,0 +1,4 @@
+echo this script ran at `date`
+echo tihs is enod of the script >&2
+date
+
