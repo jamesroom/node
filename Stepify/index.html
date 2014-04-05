@@ -3,6 +3,7 @@
 <head>
     <script type="text/javascript" src="Util.js"></script>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <script type="text/javascript" src="http://jockjs.lunjiang.dev.anjuke.com/ujs/base/logger/dom.dom/dom.query/ajax/event/ui.panel/ui.autocomplete/cookie/site/utils.base/8eb34313e881e646f9edf194560de0d1.js"></script>
     <title></title>
     <style>
         html,body{
@@ -33,15 +34,39 @@
 
         });
 
-    }
-    document.getElementById("abort").onclick = function(){
-        ajax.abort();
+</div>
+    <script type="text/javascript">
+
+    // 百度地图API功能
+
+    var callback = {};
+    var guid =0;
+    var preAjax =null;
+    ;(function(){
+
+        document.body.onclick= function(){
+            preAjax = null;
+             J.get({
+                timeout:20000,
+                url:'index.php',
+                data:{
+                    guid:guid
+                },
+                onSuccess:(function(){
+                    preAjax = {};
+                    preAjax.onResult=result
+                    return preAjax.onResult;
+                })()
+            })
+        }
+    })();
+
+
+    function result(){
+        console.log(guid)
     }
 
-    function setValue (data){
-        document.getElementById("txt").value= data;
-    }
-</script>
+    </script>
 
 
 </body>

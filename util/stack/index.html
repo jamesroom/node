@@ -1,0 +1,61 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <script type="text/javascript" src="http://jockjs.lunjiang.dev.anjuke.com/pjs/base/logger/dom.dom/dom.query/ajax/event/ui.panel/ui.autocomplete/ui.exposure/cookie/site/utils.base/05649b0d6dcf6ac5bed03ca14aee15a3.js"></script>
+    <script type="text/javascript" src="index.js"></script>
+    <title></title>
+</head>
+<body>
+<script type="text/javascript">
+ var stack = new stack(function(data){
+     console.log('finished')
+ })
+ var i=0;
+ J.get({
+    timeout:20000,
+    type:'json',
+    url:'index.php',
+    data:{guid:i++},
+    onSuccess:stack.getCallBack(function(){
+        console.log(1);
+        console.log(arguments[1])
+
+    })
+ });
+ J.get({
+     timeout:20000,
+     type:'json',
+     url:'index.php',
+     data:{guid:i++},
+     onSuccess:stack.getCallBack('adsfasdf',function(){
+         console.log(2);
+         console.log(arguments[1])
+     })
+ });
+ J.get({
+     timeout:20000,
+
+     type:'json',
+     url:'index.php',
+     data:{guid:i++},
+     onSuccess:stack.getCallBack(function(){
+         console.log(3);
+         console.log(arguments[1])
+
+     })
+ });
+ J.get({
+     timeout:20000,
+     type:'json',
+     url:'index.php',
+     data:{guid:i++},
+     onSuccess:stack.getCallBack(function(){
+         console.log(4);
+         console.log(arguments[1])
+
+     })
+ });
+</script>
+</body>
+</html>
