@@ -56,5 +56,8 @@ var Util = {
             }
         }
         return arr;
+    },
+    getJsonp:function(){
+
     }
 }

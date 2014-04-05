@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<!-- saved from url=(0051)http://2.axescanvas.sinaapp.com/demoHome/index.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta charset="UTF-8">
+	<title>吖猩的DEMO小窝</title>
+	<style>
+		html{height: 100%}
+		body{padding:0px;margin:0px;background-color: #F6F6F6;height: 100%;overflow-x: hidden;}
+		#cas{position: absolute;top:0px;left: 0px;}
+		.view{width: 600px;margin:auto;position: relative;}
+		.demos{
+			width: 100%;
+			padding:30px 5px 5px 5px;
+			z-index: 10;
+			margin-top:150px;
+		}
+		.demos>a{
+			display: inline-block;
+			width: 180px;
+			height: 200px;
+			border:1px solid #ccc;
+			background-color: #FFF;
+			margin:7px;
+			text-decoration: none;
+
+			-webkit-transition: -webkit-transform 0.5s;
+			transition: transform 0.5s;
+			-moz-transition: -moz-transform 0.5s;
+			-ms-transition: -ms-transform 0.5s;
+
+			transform: scale(0);
+			-webkit-transform: scale(0);
+			-moz-transform: scale(0);
+			-ms-transform: scale(0);
+		}
+		.demos_pic{
+			width: 170px;
+			height: 150px;
+			margin:5px auto;
+			overflow: hidden;
+		}
+		.demos_pic img{
+			width: 100%;
+			text-align: center;
+			font-size: 10px;
+			line-height: 150px;
+			border:none;
+		}
+
+		.demos_say{
+			height: 30px;
+			line-height: 30px;
+			text-align: center;
+			font-size: 13px;
+		}
+
+		.slideLine{
+			width: 100%;
+			height:6px;
+			background-color: #4c4c4c;
+			position: absolute;
+			left: 0px;
+			top: 800px;
+			z-index: 10;
+			opacity:0;
+			-webkit-transition:top 1s , opacity 0.1s;
+			transition:top 1s , opacity 0.1s;
+			-moz-transition:top 1s , opacity 0.1s;
+			-ms-transition:top 1s , opacity 0.1s;
+		}
+		.activity{
+			opacity:1;
+			top:0px;
+		}
+		.showDemos>a{
+			transform: scale(1);
+			-webkit-transform: scale(1);
+			-moz-transform: scale(1);
+			-ms-transform: scale(1);
+		}
+	</style>
+	<script src="js/jquery-1.7.1.min.js"></script>
+	<script src="js/data.js"></script>
+	<script src="js/cube.js"></script>
+	<script src="js/part_1.js"></script>
+	<script src="js/part_2.js"></script>
+</head>
+<body style="overflow: scroll;">
+	<canvas id="cas" width="600" height="100" style="display: block; top: 50px; left: 340px;">抱歉，您的浏览器不支持canvas</canvas>
+	<div id="sssss"></div>
+	<div class="view">
+		<div class="slideLine activity"></div>
+		<div class="demos showDemos"><a href="http://2.axescanvas.sinaapp.com/FlppyPeople/index.html" target="_blank" title="FlappyPeople"><div class="demos_pic"><img src="js/flappyPeople.png" alt="FlappyPeople"></div><div class="demos_say">FlappyPeople</div></a><a href="http://2.axescanvas.sinaapp.com/planGame/index.html" target="_blank" title="飞机大战游戏"><div class="demos_pic"><img src="js/plan.png" alt="飞机大战游戏"></div><div class="demos_say">飞机大战游戏</div></a><a href="http://2.axescanvas.sinaapp.com/connectPipe/easyPipes.html" target="_blank" title="接水管游戏"><div class="demos_pic"><img src="js/pipe.png" alt="接水管游戏"></div><div class="demos_say">接水管游戏</div></a><a href="http://2.axescanvas.sinaapp.com/shotFire/shotFire.html" target="_blank" title="烟火DEMO"><div class="demos_pic"><img src="js/yanhuo.png" alt="烟火DEMO"></div><div class="demos_say">烟火DEMO</div></a><a href="http://2.axescanvas.sinaapp.com/snooker/snooker.html" target="_blank" title="桌球游戏"><div class="demos_pic"><img src="js/sinuoke.png" alt="桌球游戏"></div><div class="demos_say">桌球游戏</div></a><a href="http://2.axescanvas.sinaapp.com/cache/test.html" target="_blank" title="canvas缓存DEMO"><div class="demos_pic"><img src="js/cache.png" alt="canvas缓存DEMO"></div><div class="demos_say">canvas缓存DEMO</div></a><a href="http://2.axescanvas.sinaapp.com/LoveDemo/firstLove.html" target="_blank" title="3d标签云"><div class="demos_pic"><img src="js/3dtag.png" alt="3d标签云"></div><div class="demos_say">3d标签云</div></a><a href="http://2.axescanvas.sinaapp.com/LoveDemo/secondLove.html" target="_blank" title="文字图片粒子化"><div class="demos_pic"><img src="js/mm.png" alt="文字图片粒子化"></div><div class="demos_say">文字图片粒子化</div></a><a href="http://2.axescanvas.sinaapp.com/cube.html" target="_blank" title="3D立方体"><div class="demos_pic"><img src="js/3d.png" alt="3D立方体"></div><div class="demos_say">3D立方体</div></a><a href="http://2.axescanvas.sinaapp.com/MoreCube2.html" target="_blank" title="3D立方体——2"><div class="demos_pic"><img src="js/more3d.png" alt="3D立方体——2"></div><div class="demos_say">3D立方体——2</div></a><a href="http://2.axescanvas.sinaapp.com/shotBall.html" target="_blank" title="弹力小球"><div class="demos_pic"><img src="js/ball.png" alt="弹力小球"></div><div class="demos_say">弹力小球</div></a><a href="http://2.axescanvas.sinaapp.com/vedioPintu.html" target="_blank" title="视频拼图"><div class="demos_pic"><img src="js/pingtu.png" alt="视频拼图"></div><div class="demos_say">视频拼图</div></a><a href="http://2.axescanvas.sinaapp.com/3Dhouses/3DPicSlide.html" target="_blank" title="css3实现3D"><div class="demos_pic"><img src="js/css3d.png" alt="css3实现3D"></div><div class="demos_say">css3实现3D</div></a><a href="http://2.axescanvas.sinaapp.com/3Dhouses/index.html" target="_blank" title="css3实现3D——2"><div class="demos_pic"><img src="js/css3d_2.png" alt="css3实现3D——2"></div><div class="demos_say">css3实现3D——2</div></a><a href="http://2.axescanvas.sinaapp.com/duobianxing.html" target="_blank" title="简单多边形绘制拖动"><div class="demos_pic"><img src="js/huitu.png" alt="简单多边形绘制拖动"></div><div class="demos_say">简单多边形绘制拖动</div></a></div>
+	</div>
+
+	<script>
+		var canvas = document.getElementById("cas"),
+			ctx = canvas.getContext("2d");
+
+		canvas.width = window.innerWidth;
+		canvas.height = window.innerHeight;
+
+		window.RAF =  (function(){
+			return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame || function (callback) {window.setTimeout(callback, 1000 / 60); };
+		})();
+
+		var time = 0 , stopTotop = false;
+		var stage = {
+			init:function(){
+				time = new Date();
+				part_1.init();
+				part_2.init();
+			},
+
+			update:function(){
+				var nt = new Date();
+				part_1.update(nt-time);
+				time = nt;
+			},
+
+			loop:function(){
+				var _this = this;
+
+				 // if(part_1.state==="third"){
+					ctx.clearRect(0,0,canvas.width,canvas.height)
+				//  }else {
+				// 	ctx.fillStyle = "rgba(246,246,246,0.2)";
+			 // 	    ctx.fillRect(0,0,canvas.width,canvas.height)
+				// }
+				
+				this.update();
+				RAF(function(){
+					_this.loop();
+				})
+			}
+		}
+		
+		stage.init();
+		stage.loop();
+	</script>
+
+</body></html>

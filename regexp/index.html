@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>正则表达式集锦</title>
+    <meta charset="utf-8">
+</head>
+<body>
+<ul>
+    <li>
+        (?=pattern) 零宽正向先行断言(zero-width positive lookahead assertion)
+    </li>
+    <li>
+        (?!pattern) 零宽负向先行断言(zero-width negative lookahead assertion)
+
+    </li>
+    <li>
+        (?<=pattern) 零宽正向后行断言(zero-width positive lookbehind assertion)
+
+    </li><li>
+    (?<!pattern) 零宽负向后行断言(zero-width negative lookbehind assertion)
+
+</li>
+    <li>stringObject.match(searchvalue)</li>
+    <li>stringObject.match(regexp)</li>
+
+    <li><label>正则：</label><input value="" type="text" id="ipt"></li>
+    <li><label>字符串：</label><input value="a regular expression" type="text" id="txt"></li>
+    <li><input type="button" id="btn" value="提交"></li>
+
+</ul>
+
+<script type="text/javascript">
+    var btn = document.getElementById("btn");
+    btn.onclick=handler;
+    function handler(){
+        var reg = document.getElementById("ipt").value;
+        var txt = document.getElementById("txt").value;
+
+        var regObj = new RegExp(reg,'g');
+        var ret =txt.match(regObj);
+        console.dir(ret);
+
+    }
+
+</script>
+</body>
+</html>
