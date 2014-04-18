@@ -1,0 +1,70 @@
+body{
+    color: #333;
+    font-family: Arial, "\5B8B\4F53", Helvetica, sans-serif;
+    font-size: 12px;
+}
+ul,li{
+    margin:0;
+    padding: 0;
+    list-style: none;
+}
+a:link, a:visited{
+    color: #0041d9;
+}
+a:hover{
+    color: #f60;
+}
+#map_block .title {
+    font-size: 16px;
+    cursor: pointer;
+    color: #0041d9;
+}
+.title .hover{
+    color: #333;
+    font-weight: bold;
+    cursor: default;
+}
+.title .sep{
+    color: #999;
+    padding: 0 10px;
+}
+#map_block .c{
+    width: 1028px;
+    height: 360px;
+    border: 1px solid #ccc;
+    padding:25px;
+}
+
+.chks li{
+    float: left;
+    margin-right: 30px;
+    font-size: 14px;
+}
+.chks li label{
+}
+.chks li .tip{
+    background: url("tip.png") 0 0 #62ab00;
+    padding: 8px;
+    line-height: 0;
+    height: 0;
+    display: inline-block;
+}
+.chks  .trafic .tip {
+    background-position: 3px -25px;
+}
+.chks  .school .tip {
+    background-position: 0px -58px;
+}
+.chks  .hospital .tip {
+    background-position: 0px -720px;
+}
+.chks  .restaurant .tip {
+    background-position: 3px -25px;
+}
+.chks  .bank .tip {
+    background-position: 3px -25px;
+}
+.chks  .market .tip {
+    background-position: 3px -25px;
+}
+

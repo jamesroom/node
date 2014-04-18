@@ -12,18 +12,20 @@
      console.log('finished')
  })
  var i=0;
- J.get({
+var obj = J.get({
     timeout:20000,
     type:'json',
-    url:'index.php',
+    url:'http://www.baidu.com'||'index.php',
     data:{guid:i++},
     onSuccess:stack.getCallBack(function(){
         console.log(1);
         console.log(arguments[1])
 
     })
+
  });
- J.get({
+// console.log(obj.abort());
+ /*J.get({
      timeout:20000,
      type:'json',
      url:'index.php',
@@ -55,7 +57,7 @@
          console.log(arguments[1])
 
      })
- });
+ });*/
 </script>
 </body>
 </html>
