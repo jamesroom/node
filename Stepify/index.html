@@ -22,10 +22,10 @@
     var head =document.getElementsByTagName( "head" )[0];
     var ajax;
     document.getElementById("send").onclick = function(){
-        ajax&&ajax.abort();
+     //   ajax&&ajax.abort();
         ajax = $.ajax({
             dataType:"jsonp",
-            url:'http://www.jamesroom.com/workspace/node/Stepify/index.php',
+            url:'http://jockjs.dev.anjuke.com/workspace/node/Stepify/index.php',
             data:{
               guid:guid++
             },
@@ -34,6 +34,10 @@
         });
 
     }
+    document.getElementById("abort").onclick = function(){
+        ajax.abort();
+    }
+
     function setValue (data){
         document.getElementById("txt").value= data;
     }

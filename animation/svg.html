@@ -1,0 +1,96 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+        "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+
+<svg width="100%" height="100%" version="1.1"
+     xmlns="http://www.w3.org/2000/svg">
+    <ellipse cx="240" cy="100" rx="220" ry="30"
+             style="fill:yellow"/>
+
+    <ellipse cx="220" cy="100" rx="190" ry="20"
+             style="fill:white"/>
+
+    <line x1="0" y1="0" x2="300" y2="300"
+          style="stroke:rgb(99,99,99);stroke-width:2"/>
+
+    <polygon points="220,100 300,210 170,250"
+             style="fill:#cccccc;
+stroke:#000000;stroke-width:1"/>
+
+
+
+    <polyline points="0,0 0,20 20,20 20,40 40,40 40,60"
+              style="fill:white;stroke:red;stroke-width:2"/>
+
+    <path d="M250 150 L150 350 L250 200 Z" />
+
+
+    <path d="M153 334
+C153 334 151 334 151 334
+C151 339 153 344 156 344
+C164 344 171 339 171 334
+C171 322 164 314 156 314
+C142 314 131 322 131 334
+C131 350 142 364 156 364
+C175 364 191 350 191 334
+C191 311 175 294 156 294
+C131 294 111 311 111 334
+C111 361 131 384 156 384
+C186 384 211 361 211 334
+C211 300 186 274 156 274"
+          style="fill:white;stroke:red;stroke-width:2"/>
+
+    <defs>
+        <filter id="Gaussian_Blur">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="3" />
+        </filter>
+    </defs>
+
+    <ellipse cx="200" cy="150" rx="70" ry="40"
+             style="fill:#ff0000;stroke:#000000;
+stroke-width:2;filter:url(#Gaussian_Blur)"/>
+
+    <defs>
+        <linearGradient id="orange_red" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:rgb(255,255,0);
+stop-opacity:1"/>
+            <stop offset="50%" style="stop-color:rgb(255,0,0);
+stop-opacity:1"/>
+            <stop offset="100%" style="stop-color:#ccc;
+stop-opacity:1"/>
+
+
+                <linearGradient id="orange_red1" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" style="stop-color:rgb(255,255,0);
+stop-opacity:1"/>
+                    <stop offset="100%" style="stop-color:rgb(255,0,0);
+stop-opacity:1"/>
+                </linearGradient>
+
+
+            <radialGradient id="grey_blue" cx="50%" cy="50%" r="50%"
+                            fx="50%" fy="50%">
+                <stop offset="0%" style="stop-color:#red;stop-opacity:0"/>
+                <stop offset="100%" style="stop-color:rgb(0,0,255);stop-opacity:1"/>
+            </radialGradient>
+
+
+        </linearGradient>
+
+
+        <radialGradient id="grey_blue" cx="20%" cy="40%" r="50%"
+                        fx="50%" fy="50%">
+            <stop offset="0%" style="stop-color:rgb(200,200,200);
+stop-opacity:0"/>
+            <stop offset="100%" style="stop-color:#red;
+stop-opacity:1"/>
+        </radialGradient>
+    </defs>
+
+    <ellipse cx="500" cy="190" rx="85" ry="55"
+             style="fill:url(#grey_blue)"/>
+
+
+    <ellipse cx="230" cy="500" rx="110" ry="100"
+             style="fill:url(#grey_blue)"/>
+</svg>

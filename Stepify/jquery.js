@@ -8297,7 +8297,6 @@
 
                     // Attach handlers for all browsers
                     script.onload = script.onreadystatechange = function( _, isAbort ) {
-
                         if ( isAbort || !script.readyState || /loaded|complete/.test( script.readyState ) ) {
 
                             // Handle memory leak in IE
@@ -8323,6 +8322,7 @@
                 },
 
                 abort: function() {
+                   // alert(1);
                     if ( script ) {
                         script.onload( 0, 1 );
                     }

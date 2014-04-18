@@ -57,7 +57,42 @@ var Util = {
         }
         return arr;
     },
-    getJsonp:function(){
+    // callback the callback name
+    // url  the calllback url
+    getJsonp:function(url,callback){
+        var script  = document. createElement("script");
+        var head = document.getElementsByTagName("head")[0];
+        url = url.replace(/(?=\?).+?|$/,function(a){
+                return "?callback="+callback;
+            });
+         script.onload = script.onreadystatechange = function( _, isAbort ) {
 
+                        if ( isAbort || !script.readyState || /loaded|complete/.test( script.readyState ) ) {
+
+                            // Handle memory leak in IE
+                            script.onload = script.onreadystatechange = null;
+
+                            // Remove the script
+                            if ( head && script.parentNode ) {
+                                head.removeChild( script );
+                            }
+
+                            // Dereference the script
+                            script = undefined;
+
+                            // Callback if not abort
+                            if ( !isAbort ) {
+                                callback( 200, "success" );
+                            }
+                        }
+                    };
+        head.appendChild(script);
+
+    },
+    mix:function(obj1,obj2){
+        for(var i in obj2){
+            obj1[i] = obj2[i]
+        };
+        return obj1;
     }
 }
