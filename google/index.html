@@ -15,7 +15,7 @@
             <span>街景</span>
         </div>
         <div class="c">
-            <ul class="chks">
+            <ul class="chks clearfix">
                 <li class="trafic">
                     <input type="checkbox" id="chk_trafic">
                     <span class="tip"></span>
@@ -49,37 +49,36 @@
             </ul>
             <div class="l">
                 <div id="map_container"></div>
-                <div>
-                    <div>
-                        <label>本小区：</label><a href="###">浦发绿城</a>
-                        <label>均价：</label><span>21254元/m2</span>
+                <div class="ms clearfix">
+                    <div class='ms_l'>
+                        <label>本小区：</label>
+                        <a href="###">浦发绿城</a>
+                        <label>均价：</label>
+                        <span>21254元/m2</span>
                     </div>
-                    <div>
+                    <div class="ms_r">
                         <label>附近楼盘：</label><a href="###">凤凰城</a>
                         <label>均价：</label><span>21254元/m2</span>
-                        <span class="addr">770米</span>
+                        <span class="addr_tip">770米</span>
                     </div>
                 </div>
                 <div class="bottom">
                     <b>路线查询：</b>
-                    <div class="begain">
+                    <span class="begain">
                         <label>起点</label>
                         <input type="text" value="">
-                    </div>
-                    <div class="change"></div>
-                    <div class="end">
+                    </span><span class="change"></span><span class="end">
                         <label>终点</label>
                         <input type="text" value="">
-                    </div>
-                    <input type="button" value="查询"/>
+                    </span><a class="btn" href="###">查询</a>
                 </div>
             </div>
             <div class="r">
-                <dl>
+                <dl class="item trafic">
                     <dt>交通</dt>
                     <dd>
                         <span class="tip"></span>
-                        <span class="distance">880米</span>
+                        <em>880米</em>
                         <div>
                             <a href="###">浦三路</a>
                             -
@@ -89,7 +88,7 @@
                     <dd>
                         <div>
                             <span class="tip"></span>
-                            <span class="distance">880米</span>
+                            <em>880米</em>
                             <div>
                                 <a href="###">西泰林路永泰路</a>
                                 -
@@ -104,11 +103,12 @@
                     </dd>
                 </dl>
 
-                <dl>
+                <dl class="item school">
                     <dt>学校</dt>
-                    <dd>
+                    <dd class="hover">
                         <span class="tip"></span>
-                        <span class="distance">880米</span>
+                        <em>880米</em>
+
                         <div>
                             <a href="###">上海市上击中学南校</a>
                             -
@@ -118,7 +118,7 @@
                     </dd>
                     <dd>
                         <span class="tip"></span>
-                        <span class="distance">880米</span>
+                        <em>880米</em>
                         <div>
                             <a href="###">上海市上击中学南校</a>
                             -
@@ -127,7 +127,7 @@
 
                     </dd> <dd>
                     <span class="tip"></span>
-                    <span class="distance">880米</span>
+                    <em>880米</em>
                     <div>
                         <a href="###">上海市上击中学南校</a>
                         -
@@ -136,7 +136,7 @@
 
                 </dd> <dd>
                     <span class="tip"></span>
-                    <span class="distance">880米</span>
+                    <em>880米</em>
                     <div>
                         <a href="###">上海市上击中学南校</a>
                         -
@@ -145,7 +145,7 @@
 
                 </dd> <dd>
                     <span class="tip"></span>
-                    <span class="distance">880米</span>
+                    <em>880米</em>
                     <div>
                         <a href="###">上海市上击中学南校</a>
                         -
@@ -155,103 +155,157 @@
                 </dd>
                 </dl>
                 <!---->
-                <dl class="select">
+                <dl class="select" style="display: none">
+                    <dt>
+                        <label>起点：</label>
+                        <div class="txt">浦发浦发浦发浦发浦发浦发浦发浦发浦发</div>
+                        <a href="###" class="tip">设为终点</a>
+                    </dt>
+                    <dd class="hover">
+                        <div>
+                            <a href="###">浦发银行（梅川支行）梅川支行梅川支行梅川支行梅川支行</a>
+                            <div>地址：真光路1288号百联中环购物方场</div>
+                        </div>
+                        <a href="###" class="tip">设为终点</a>
+                    </dd>
+                    <dd>
+                        <div>
+                            <a href="###">浦发银行（梅川支行）梅川支行梅川支行梅川支行梅川支行</a>
+                            <div>地址：真光路1288号百联中环购物方场</div>
+                        </div>
+                        <a href="###" class="tip">设为终点</a>
+                    </dd>
+                    <dd>
+                        <div>
+                            <a href="###">浦发银行（梅川支行）梅川支行梅川支行梅川支行梅川支行</a>
+                            <div>地址：真光路1288号百联中环购物方场</div>
+                        </div>
+                        <a href="###" class="tip">设为终点</a>
+                    </dd>
+                    <dd>
+                        <div>
+                            <a href="###">浦发银行（梅川支行）梅川支行梅川支行梅川支行梅川支行</a>
+                            <div>地址：真光路1288号百联中环购物方场</div>
+                        </div>
+                        <a href="###" class="tip">设为终点</a>
+                    </dd>
+                    <dd>
+                        <div>
+                            <a href="###">浦发银行（梅川支行）梅川支行梅川支行梅川支行梅川支行</a>
+                            <div>地址：真光路1288号百联中环购物方场</div>
+                        </div>
+                        <a href="###" class="tip">设为终点</a>
+                    </dd>
+                </dl>
+                <dl class="select q" style="display: none">
                     <dt>
                         <label>终点：</label>浦发
                         <span class="tip"></span>
                     </dt>
-                    <dd>
-                        <div>
+                    <dd class="hover">
+                        <div class="select_item">
                             <a href="###">浦发银行（梅川支行）梅川支行梅川支行梅川支行梅川支行</a>
-                            <div>地址：真光路1288号百联中环购物方场</div>
+                            <div>地址：真光路1288号百联中环购物方场真光路1288号百联中环购物方场</div>
                         </div>
-                        <input type="button" value="设为终点"/>
+                        <a href="###" class="tip">设为终点</a>
                     </dd>
                     <dd>
-                        <div>
+                        <div class="select_item">
                             <a href="###">浦发银行（梅川支行）梅川支行梅川支行梅川支行梅川支行</a>
                             <div>地址：真光路1288号百联中环购物方场</div>
                         </div>
-                        <input type="button" value="设为终点"/>
+                        <a href="###" class="tip">设为终点</a>
                     </dd>
                     <dd>
-                        <div>
+                        <div class="select_item">
                             <a href="###">浦发银行（梅川支行）梅川支行梅川支行梅川支行梅川支行</a>
                             <div>地址：真光路1288号百联中环购物方场</div>
                         </div>
-                        <input type="button" value="设为终点"/>
+                        <a href="###" class="tip">设为终点</a>
                     </dd>
+
                     <dd>
-                        <div>
+                        <div class="select_item">
                             <a href="###">浦发银行（梅川支行）梅川支行梅川支行梅川支行梅川支行</a>
                             <div>地址：真光路1288号百联中环购物方场</div>
                         </div>
-                        <input type="button" value="设为终点"/>
-                    </dd>
-                    <dd>
-                        <div>
-                            <a href="###">浦发银行（梅川支行）梅川支行梅川支行梅川支行梅川支行</a>
-                            <div>地址：真光路1288号百联中环购物方场</div>
-                        </div>
-                        <input type="button" value="设为终点"/>
+                        <a href="###" class="tip">设为终点</a>
                     </dd>
                 </dl>
 
-                <div class="way">
-                    <div>
-                        <span class="hover">公交</span>
-                        <span>驾车</span>
+                <div class="way" style="display: none">
+                    <div class="tab">
+                        <span class="bybus hover">公交</span>
+                        <span class="bycar">驾车</span>
                     </div>
-                    <div class="gre">
-                        <span>地铁7号线</span>
-                        <span class="right_tip"></span>
-                        <span>地铁６号线</span>
-                        <span>全程约３０分钟/８.0公里</span>
-                    </div>
-                    <div class="begain">锦绣路</div>
-                    <ul>
-                        <li>
-                            乘坐
-                            <a href="###">徐川专线</a>，
-                            在<a href="###">高科西路站</a>下车
-                        </li>
-                        <li>
-                            乘坐
-                            <a href="###">徐川专线</a>，
-                            在<a href="###">高科西路站</a>下车
-                        </li>
-                        <li>
-                            乘坐
-                            <a href="###">徐川专线</a>，
-                            在<a href="###">高科西路站</a>下车
-                        </li>
-                        <li>
-                            乘坐
-                            <a href="###">徐川专线</a>，
-                            在<a href="###">高科西路站</a>下车
-                        </li>
-                       　<li>
+                    <div class="scroll_obj">
+                        <div class="gre">
+                            <span class="g">地铁7号线</span>
+                            <span class="right_tip"></span>
+                            <span class="g">地铁６号线</span>
+                            <span class="long">全程约30分钟/8.0公里</span>
+                        </div>
+                        <div class="begain">锦绣路</div>
+                        <ul>
+                            <li>
+                                乘坐
+                                <a href="###">徐川专线</a>，
+                                在<a href="###">高科西路站</a>下车
+                            </li>
+                            <li>
+                                乘坐
+                                <a href="###">徐川专线</a>，
+                                在<a href="###">高科西路站</a>下车
+                            </li>
+                            <li>
+                                乘坐
+                                <a href="###">徐川专线</a>，
+                                在<a href="###">高科西路站</a>下车
+                            </li>
+                            <li>
+                                乘坐
+                                <a href="###">徐川专线</a>，
+                                在<a href="###">高科西路站</a>下车
+                            </li>
+                            <li>
+                                乘坐
+                                <a href="###">徐川专线</a>，
+                                在<a href="###">高科西路站</a>下车
+                            </li>
+                            <li>
+                                乘坐
+                                <a href="###">徐川专线</a>，
+                                在<a href="###">高科西路站</a>下车
+                            </li>
+
                             <li>步行至&nbsp;同成大厦</li>
-                       </li>
-                    </ul>
-                    <div>同成大厦</div>
+                        </ul>
+                        <div class="end">同成大厦</div>
+                    </div>
+
                 </div>
 
 
-                <div class="def">
-                    <div>
-                        <div>本小区：<a href="###">浦发绿城</a></div>
+                <div class="def" style="">
+                    <div class="region">
+                        <div class="font_b">
+                            <b>本小区：</b>
+                            <a href="###">浦发绿城</a>
+                        </div>
                         <div>[浦东－三林]－永泰路９９弄</div>
-                        <span>２２３２１元／平方</span>
+                        <em>895411元/平方</em>
                     </div>
 
-                    <div>
-                        <div>附近楼盘：<a href="###">凤凰城</a></div>
-                        <div><span>[浦东－三林]－永泰路９９弄</span>,<span class="addr">997米</span></div>
-                        <span>２２３２１元／平方</span>
+                    <div class="region">
+                        <div class="font_b">
+                            <b>附近楼盘：</b>
+                            <a href="###">浦发绿城</a>
+                        </div>
+                        <div>[浦东－三林]－永泰路９９弄</div>
+                        <em>12365元/平方</em>
                     </div>
-                    <div>
-                        <a href="###">地图找周边房源</a>
+                    <div class="region">
+                        <a class="btn" href="###">地图找周边房源</a>
                     </div>
                  </div>
 
