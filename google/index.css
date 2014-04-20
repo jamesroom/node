@@ -32,7 +32,7 @@ a:hover{
 }
 #map_block .c{
     width: 1032px;
-    height: 365px;
+    height: 366px;
     border: 1px solid #ccc;
     border-radius: 6px;
     padding:18px 25px 25px 21px;
@@ -89,11 +89,10 @@ a:hover{
 .l #map_container{
     width: 100%;
     height: 270px;
-    background: url('http://api.map.baidu.com/staticimage?center=116.403874,39.914888&width=640&height=270&zoom=17');
 }
 .l .ms{
     line-height: 23px;
-    text-indent: 15px;
+    text-indent: 18px;
     border: 1px solid #e3e3e3;
 }
 .l .ms a{
@@ -106,7 +105,7 @@ a:hover{
 .l .ms_r{
     width: 55%;
 }
-.l .addr_tip{
+.l .addr_tip,.r .addr_tip{
     padding-left: 15px;
     background: url("tip.png") 0 -449px no-repeat;
     margin-left: 1em;
@@ -179,6 +178,7 @@ a:hover{
 }
 #map_block .auto{
     overflow-y: scroll;
+    position: relative;
 }
 #map_block .chks{
     -webkit-user-select:none;
@@ -187,7 +187,7 @@ a:hover{
 .r{
     height: 342px;
     font-size: 12px;
-    width: 356px;
+    width: 360px;
 
 }
 .r .scroll_obj{
@@ -366,18 +366,20 @@ a:hover{
 /**　普通项　begain **/
 .r .item{
     margin-bottom: 16px;
+    position: relative;
 }
 .r .item dt{
     font-size: 14px;
     color: #333;
     font-weight: bold;
     border-bottom: 1px solid #ebebeb;
-    padding-bottom: 5px;
+    padding-bottom: 8px;
 }
 .r .item dd{
     position: relative;
     line-height: 22px;
     padding: 7px 30px;
+    padding-right: 48px;
     border-bottom: 1px dashed #ebebeb;
 }
 .r .item label{
@@ -395,10 +397,8 @@ a:hover{
     height: 16px;
     position: absolute;
     left: 0px;
+    _left:-30px;
     top:9px;
-}
-.r .item{
-    display: none;
 }
 .r .item .hover .tip{
     background-color: #f90;
@@ -415,9 +415,9 @@ a:hover{
 }
 .r .def{
     width: 368px;
-    margin-left: -4px;
+    margin-left: 2px;
     position: relative;
-    top:3px;
+    top:6px;
 }
 .r .region{
     margin: 20px 0 40px 0;
@@ -453,7 +453,24 @@ a:hover{
     background: #f60;
 }
 
-
+.overlay{
+    color: #fff;
+    background: #f60;
+    line-height: 30px;
+    border: 1px solid #fff;
+    white-space: nowrap;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 0 10px;
+}
+.overlay .tip{
+    background: url("tip.png") 0 -1px no-repeat;
+    position: absolute;
+    left: 7px;
+    top: 31px;
+    width: 15px;
+    height: 16px;
+}
 
 
 /**　普通项　end **/
