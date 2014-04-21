@@ -379,11 +379,21 @@ a:hover{
     position: relative;
     line-height: 22px;
     padding: 7px 30px;
-    padding-right: 48px;
+    padding-right: 53px;
     border-bottom: 1px dashed #ebebeb;
 }
+
+.r  .bus .tip{
+    background-position: 1px -417px;
+}
+
+.r  .hospital dd .tip{
+    background-position: 1px -92px;
+}
+
+
 .r .item label{
-    display: inline-block;
+    /*display: inline-block;*/
 }
 .r .item em{
     position: absolute;
@@ -406,12 +416,17 @@ a:hover{
 .r .item .hover{
     background: #F7F7F7;
 }
-.r .trafic .tip{
+.r .trafic .tip,.overlay .trafic{
     background-position:2px -221px ;
 }
-.r .school .tip{
+.r .school .tip,.overlay .trafic{
     background-position:1px -255px ;
 
+}
+#map_container .overlay * {
+    width: 20px;
+    height: 20px;
+    background: url("tip.png") 0 0 #2fb1ff no-repeat;
 }
 .r .def{
     width: 368px;
@@ -453,7 +468,7 @@ a:hover{
     background: #f60;
 }
 
-.overlay{
+.overlay_comm{
     color: #fff;
     background: #f60;
     line-height: 30px;
