@@ -1,65 +1,82 @@
 var http = require("http"),
-    router = require("./config/router"),
     URL = require("url"),
     util = require("util"),
     fs = require("fs"),
-    analysis = require("./config/analysis")
+    analysis = require("./config/analysis"),
+    socket = require('socket.io');
 
-http.createServer(function(request, response) {
+var server = http.createServer(function(request, response) {
     var paths = URL.parse(request.url,true);
     var path = paths.path.substring(1).replace('/','_');//解析带/变成_
-    if(!path || !router[path]){
+    if(!path){
         response.writeHead(404);
         response.end('not found');
     }else{
         var controller,module,view;
-        module= require('./module/'+router[path])
-       fs.stat('./module/'+router[path]+".js",function(err,stat){
-           if(err || !stat.isFile()){
-               response.writeHead(404);
-               response.end('file not found');
-               return;
-           }
-           if( module ){
-               module = typeof module == "function" ? new module(paths.query):module;
-           }
-           if(typeof (controller= require('./controller/'+router[path])) == "function"){
-               console.log(module)
-               controller.prototype = {module:module};
-               controller = new controller(request,response);
+       fs.exists('./controller/'+path+".js",function(isExist){
+           /**
+            * if the contorller have not exist.
+            */
+           if(!isExist){
+                //直接读html
+               fs.exists('./views/'+path+".html",function(isExist){
+                   if(!isExist){
+                       response.writeHead(404);
+                       response.end('file not found');
+                       return;
+                   }else{
+                       haveNoController();
+                       return;
+                   }
 
+               });
+            return;
+           }
 
-               view = './views/index.html';
+           if(typeof ((controller= require('./controller/'+path)) == "function")){
+               module = require('./module/'+path);
+               var result  = new controller(request,response,module);
+               if(!result.view){
+                   response.end();
+               }
+               view = './views/'+result.view+'.html';
                //解析view
-
                response.writeHead(200, {"Content-Type": "text/html"});
-             //  res.write("hello world");
-              // res.end();
-               var db = require("./config/db");
-               db();
                 var data = fs.readFile(view,"utf-8",function(err,data){
-                    var obj1 = {
-                        'view':'',
-                        'data':{
-                          'title':"JOCKJS API",
-                           'item':[
-                               {item_title:'J.g("id")',item_text:"获取{id231}的dom对象"},
-                               {item_title:'J.g("id")',item_text:"获取{id123123}的dom对象"},
-                               {item_title:'J.g("id")',item_text:"获取{id123123132}的dom对象"}
-                           ]
-                        }
-
-                    }
-
-                    var data = analysis(data,obj1.data)
+                    var data = analysis(data,result.data);
                     response.write(data)
                     response.end();
 
                 });
 
 
+           }else{
+               haveNoController();
+           }
+
+           /**
+            * if have no contorll or controll return a empty object;
+            */
+           function haveNoController(){
+
+               fs.readFile('./views/'+path+".html","utf-8",function(err,data){
+                   response.writeHead(200, {"Content-Type": "text/html"});
+                   response.write(data)
+                   response.end();
+
+               });
            }
        });
 
     }
-}).listen(8000);
+}).listen(8080,function(){
+        console.log('server have been start');
+
+    });
+socket.listen(server).on('connection',function(socket){
+    socket.on('msg',function(data){
+        socket.broadcast.emit("user message",data);
+    })
+});
+
+

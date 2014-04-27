@@ -1,0 +1,58 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title></title>
+    <style type="text/css">
+        body,html{
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+    <meta content="text/html" charset="utf-8"/>
+</head>
+<body>
+<div style="margin: 0;padding: 0;width: 100%;height: 100%;position: relative">
+    <div style="height:100%;margin-bottom: -40px;">
+
+    </div>
+    <div style="height: 30px;position: relative;padding-right: 47px">
+        <input type="text" id="txt_sendvalue" style="display: block;width:100%;margin: 0;padding: 0;height: 30px;"/>
+        <input type="button" id="ipt_btnsend" style="position: absolute;right: 0;top: -2px;padding: 7px 6px;" value="发送">
+    </div>
+
+</div>
+<script type="text/javascript">
+    function socket(url){
+        var  websocket = new WebSocket(url);
+        websocket.onopen = function (evt) { onOpen(evt) };
+        websocket.onclose = function (evt) { onClose(evt) };
+        websocket.onmessage = function (evt) { onMessage(evt) };
+        websocket.onerror = function (evt) { onError(evt) };
+        function onOpen(evt) {
+            console.log("Connected to WebSocket server.");
+        }
+        function onClose(evt) {
+            console.log("Disconnected");
+        }
+        function onMessage(evt) {
+            console.log('Retrieved data from server: ' + evt.data);
+        }
+        function onError(evt) {
+            console.log('Error occured: ' + evt.data);
+        }
+        document.getElementById("ipt_btnsend").onclick=function(){
+            console.log( websocket.emit);
+            websocket.emit( document.getElementById("txt_sendvalue").value);
+        }
+    }
+    socket("ws://test.lunjiang.dev.aifang.com:8080");
+
+</script>
+
+
+</body>
+
+</html>
