@@ -25,7 +25,8 @@
 
 </div>
 <script type="text/javascript">
-    function socket(url){
+   /*
+   function socket(url){
         var  websocket = new WebSocket(url);
         websocket.onopen = function (evt) { onOpen(evt) };
         websocket.onclose = function (evt) { onClose(evt) };
@@ -41,16 +42,28 @@
             console.log('Retrieved data from server: ' + evt.data);
         }
         function onError(evt) {
-            console.log('Error occured: ' + evt.data);
+            console.log('Error occured: ' ,evt);
         }
         document.getElementById("ipt_btnsend").onclick=function(){
             console.log( websocket.emit);
-            websocket.emit( document.getElementById("txt_sendvalue").value);
+            websocket.send( document.getElementById("txt_sendvalue").value);
         }
     }
-    socket("ws://test.lunjiang.dev.aifang.com:8080");
+    socket("ws://localhost:8888");
+
+	*/
+
+
 
 </script>
+<script src="/socket.io/socket.io.js"></script>
+<script>
+  var socket = io.connect('http://localhost');
+    socket.on('news', function (data) {
+	        console.log(data);
+		    socket.emit('my other event', { my: 'data' });
+		      });
+    </script>
 
 
 </body>

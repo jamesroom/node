@@ -73,10 +73,11 @@ var server = http.createServer(function(request, response) {
         console.log('server have been start');
 
     });
-socket.listen(server).on('connection',function(socket){
-    socket.on('msg',function(data){
-        socket.broadcast.emit("user message",data);
-    })
+
+var io = socket.listen(server);
+io.sockets.on('connection', function (socket) {
+	  socket.emit('news', { hello: 'world' });
+	    socket.on('my other event', function (data) {
+		        console.log(data);
+			  });
 });
-
-
