@@ -1,0 +1,74 @@
+@charset "UTF-8";
+/* CSS Document */
+
+*{ margin:0px; padding:0px;font-size:12px; font-family:"宋体","微软雅黑"，Arial, Helvetica, sans-serif  ; }
+body{ font-size:12px; font-family:"宋体","微软雅黑"， Arial, Helvetica, sans-serif  ; color:#222222; text-align:center; background: #F3F3F3; padding:20px 15px; }
+td{font-size:12px; font-family:"宋体","微软雅黑"， Arial, Helvetica, sans-serif;}
+p{line-height:1.5em; }
+ul li{ margin:0px; padding:0px; list-style-type:none;}
+img{ border:0px; vertical-align:middle;}
+a{
+	color:#333;
+	text-decoration:none;
+	line-height:25px;
+}
+a:hover{ text-decoration:underline; }
+.red{ color:#FF0000;}
+
+.navigation{ background:#E7E7E7; line-height:30px; text-align:left; padding:0px 20px; margin-bottom:10px;}
+.background{ text-align:left;}
+.BoxCon{ background:#FFFFFF; border:#ddd solid 1px;}
+.BoxTitle{ background:url(../images/boxTitleBg.png) repeat-x; height:30px; line-height:30px; padding-left:20px; border-bottom:#ddd solid 1px;}
+.titName{
+	padding-left:20px;
+	background:url(../images/dian4.png) no-repeat 0 center;
+	font-weight: bold;
+}
+.SubmitCon{ padding:15px 20px;}
+.introduce{ background:#f8f8f8 url(../images/dian5.png) no-repeat 20px 15px; padding:15px 15px 15px 40px; line-height:2em; color:#777777; margin-bottom:20px;}
+/*输入型表格*/
+.submitTable td{line-height:35px;}
+.submitTable .tdTitle{  text-align:right; width:40%;}
+.submitTable .tdValue{ text-align:left; width:60%; padding-left:5px;}
+.submitTable .tdTitle4{  text-align:right; width:20%;}
+.submitTable .tdValue4{ text-align:left; width:30%;padding-left:5px;}
+.submitTable .tdTitle6{  text-align:right; width:15%;}
+.submitTable .tdValue6{ text-align:left; width:15%;padding-left:5px;}
+.inputText{ background:#FFFBEC; border: #b1b1b1 solid 1px; height:22px; line-height:22px; padding:0px 5px;}
+.SelectText{background:#FFFBEC; border: #b1b1b1 solid 1px; height:22px; line-height:22px;}
+/*列表型表格*/
+.listTable{border-collapse:collapse; }
+.listTable td{line-height:25px; border:#ddd solid 1px;}
+.listTable .tdTitle{  text-align: center; background:url(../images/listTableTitle.png) repeat-x; }
+.listTable .tdValue{text-align: center;  }
+.listTable .tdValue a{ color:#0000FF; text-decoration:underline;}
+
+.page{ text-align:right;}
+.page td{ padding:5px;}
+/*按钮*/
+.ButtPar{ padding:20px; text-align:left;}
+.buttEnt{ background:url(../images/buttEnt.png) no-repeat; border:0px; width:85px; height:35px;}
+.buttRest{ background:url(../images/buttRest.png) no-repeat; border:0px;width:85px; height:35px;}
+.bottS{ background:url(../images/butts.png) repeat-x; height:25px; border:0px; text-align:center; color:#FFFFFF;  font-weight:bold; padding:0px 15px}
+
+
+/*弹出框*/
+.windowBg{ background:#000000; position:fixed; width:100%; height:100%; top:0; left:0; z-index:1; display:none;
+	filter:Alpha(Opacity=30);
+	/* IE */
+-moz-opacity:0.4;
+	/* Moz + FF */
+opacity: 0.4;}
+
+.winBox{ display:none; border:#CCCCCC solid 1px; background:#FFFFFF; width:658px; position:absolute;z-index:100; top:20%; left:15%; text-align: left;}
+.winTiele{ background:url(../images/winTiele.png) repeat-x; height:41px; font-weight:bold; color:#FFFFFF; padding-left:20px; line-height:41px; position:relative;}
+.close{ background:url(../images/close.png) no-repeat; width:23px; height:21px; position: absolute; right:10px; top:10px; cursor:pointer;}
+.windowCon{ padding:5px;}
+.winlistTable{border-collapse:collapse; }
+.winlistTable td{line-height:25px; border:#ddd solid 1px;}
+.winlistTable .tdTitle{  text-align: right; width:30%; border-right:0px;}
+.winlistTable .tdValue{text-align: left; padding-left:10px; border-left:0px;}
+
+.butPass{ background:url(../images/pass.png) no-repeat; width:104px; height:24px; border:0px;}
+.butRefuse{ background:url(../images/refuse.png) no-repeat; width:104px; height:24px; border:0px;}
+.butClose{ background: url(../images/WinClose.png) no-repeat; width:80px; height:24px; border:0px;}

@@ -1,0 +1,160 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+
+<link href="../css/comter.css" rel="stylesheet" type="text/css" />
+<script src="../js/jquery-1.5.min.js"></script>
+<script src="../js/conter.js"></script>
+</head>
+
+<body>
+	<div class="navigation">当前位置：交易功能 > 代付业务录入 &gt; 实时代付录入 </div>
+	<div class="background">
+		<div class="BoxCon">
+			<div class="BoxTitle">
+			  <div  class="titName">收款人账户信息</div>
+			</div>
+			<div class="SubmitCon">
+			  <table width="900px" border="0" cellspacing="0" cellpadding="0" class="submitTable">
+				  <tr>
+					<td class="tdTitle6">收款人银行账户名：</td>
+					<td class="tdValue6"><input name="text" type="text"  class="inputText" size="18"/>
+				    <span class="tdTitle6"><span class="red">*</span></span></td>
+					<td class="tdTitle6">收款人银行账号：</td>
+					<td class="tdValue6"><input name="text2" type="text"  class="inputText" size="18"/>
+				    <span class="red">*</span></td>
+					<td class="tdTitle6">开户行名称：</td>
+					<td class="tdValue6"><input name="text3" type="text"  class="inputText" size="18"/>
+				    <span class="red">*</span></td>
+				  </tr>
+				  <tr>
+					<td class="tdTitle6">开户省：				    </td>
+					<td class="tdValue6"><select name="select" class="SelectText">
+                      <option>-请选择-</option>
+                    </select></td>
+					<td class="tdTitle6">开户市：</td>
+					<td class="tdValue6"><input name="text5" type="text"  class="inputText" size="18"/></td>
+					<td class="tdTitle6">银行账号类型：</td>
+					<td class="tdValue6">
+					  <label>
+					    <input type="radio" name="radiobutton" value="radiobutton" />
+				      银行卡</label>
+					  <label>
+					    <input type="radio" name="radiobutton" value="radiobutton" />
+				      </label>
+					 
+			        存折<span class="red">*</span></td>
+				  </tr>
+				  <tr>
+					<td class="tdTitle6">客户类型：				    </td>
+					<td class="tdValue6"><select name="select2" class="SelectText">
+                      <option>对私</option>
+                    </select>
+				    <span class="tdTitle6"><span class="red">*</span></span></td>
+					<td class="tdValue6">&nbsp;</td>
+					<td class="tdValue6">&nbsp;</td>
+					<td class="tdValue6">&nbsp;</td>
+					<td class="tdValue6">&nbsp;</td>
+				  </tr>
+			  </table>
+
+		  </div>
+		</div>
+		<div style="height:10px;"></div>
+		<div class="BoxCon">
+			<div class="BoxTitle">
+			  <div  class="titName">收款人账户信息</div>
+			</div>
+			<div class="SubmitCon">
+				<table width="900px" border="0" cellspacing="0" cellpadding="0" class="submitTable">
+				  <tr>
+				    <td class="tdTitle" style="width:15%">交易金额（元）：</td>
+				    <td class="tdValue" style="width:75%"><input name="text4" type="text"  class="inputText" size="25"/>
+                      <span class="tdTitle"><span class="red">*</span></span></td>
+			      </tr>
+				  <tr>
+					<td class="tdTitle" style="width:15%">付款说明：<br />
+					  有效输入100个字符</td>
+					<td class="tdValue" style="width:75%">
+					  <label>
+					    <textarea name="textarea" cols="55" rows="5" style="width:80%;"></textarea>
+				      </label>
+                    <span class="tdTitle"><span class="red">*</span></span></td>
+				  </tr>
+				</table>
+			</div>
+			</div>
+		<div style="height:10px;"></div>
+		<div class="BoxCon">
+			<div class="BoxTitle">
+			  <div  class="titName">其他信息</div>
+			</div>
+			<div class="SubmitCon">
+			  <table width="900px" border="0" cellspacing="0" cellpadding="0" class="submitTable">
+				  <tr>
+					<td class="tdTitle6">开户证件类型：</td>
+					<td class="tdValue6"><select name="select3" class="SelectText">
+                      <option>-请选择-</option>
+                    </select></td>
+					<td class="tdTitle6">收款人证件号：</td>
+					<td class="tdValue6"><input name="text2" type="text"  class="inputText" size="18"/></td>
+					<td class="tdTitle6">收款人联系电话：</td>
+					<td class="tdValue6"><input name="text3" type="text"  class="inputText" size="18"/></td>
+				  </tr>
+			  </table>
+
+		  </div>
+		</div>
+		<div class="ButtPar">
+			<div style="width:900px" align="center"><input type="button" value=" "  class="buttEnt" />&nbsp;&nbsp;
+			<input type="reset" value=" " class="buttRest" />
+            <a href="#" onclick="openWindow()">弹出窗</a> </div>
+		</div>
+	</div>
+    
+<!--弹出层-->
+<div class="windowBg"></div>
+<div class="winBox">
+	<div class="winTiele">转账审核 <div class="close" onclick="closeWin()"></div></div>
+	<div class="windowCon">
+		<table width="100%" border="0" cellspacing="0" cellpadding="0" class="winlistTable">
+		  <tr>
+			<td class="tdTitle">商户号：</td>
+			<td class="tdValue">100001230123</td>
+		  </tr>
+		  <tr>
+			<td class="tdTitle">商户名：				    </td>
+			<td class="tdValue">夏威夷商贸有限公司</td>
+		  </tr>
+		  <tr>
+		    <td class="tdTitle">账户名：</td>
+		    <td class="tdValue">欧阳</td>
+	      </tr>
+		  <tr>
+		    <td class="tdTitle">账户号：</td>
+		    <td class="tdValue">1000123</td>
+	      </tr>
+		  <tr>
+		    <td class="tdTitle">转账金额：</td>
+		    <td class="tdValue">12.00</td>
+	      </tr>
+		  <tr>
+		    <td class="tdTitle">转账说明：</td>
+		    <td class="tdValue">买50个</td>
+	      </tr>
+		  <tr>
+		    <td class="tdTitle">审核意见：<br />
+		      （100个字以内）</td>
+		    <td class="tdValue">
+		        <textarea name="textarea" rows="6" style=" width:95%;"></textarea>		    </td>
+	      </tr>
+		  <tr>
+		    <td colspan="2" align="center" class="ButtPar"><input type="button"  class="butPass" value=""/>&nbsp;<input type="button"class="butRefuse" value="" />&nbsp;<input type="button"class="butClose" value="" onclick="closeWin()"/></td>
+	      </tr>
+		</table>
+	</div>
+</div>
+</body>
+</html>

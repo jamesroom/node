@@ -1,0 +1,242 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+
+<link href="../css/comter.css" rel="stylesheet" type="text/css" />
+<script src="../js/jquery-1.5.min.js"></script>
+<script src="../js/conter.js"></script>
+</head>
+
+<body>
+	<div class="navigation">当前位置：交易功能 > 代付业务录入 &gt; 实时代付录入 </div>
+	<div class="background">
+		<div class="BoxCon">
+			<div class="BoxTitle">
+			  <div  class="titName">代付导入查询</div>
+			</div>
+			<div class="SubmitCon">
+			  <table width="900px" border="0" cellspacing="0" cellpadding="0" class="submitTable">
+				  <tr>
+					<td class="tdTitle6">交易流水号：</td>
+					<td class="tdValue6"><input name="text" type="text"  class="inputText" size="18"/>
+				    <span class="tdTitle6"><span class="red">*</span></span></td>
+					<td class="tdTitle6">收款人姓名：</td>
+					<td class="tdValue6"><input name="text2" type="text"  class="inputText" size="18"/>
+				    <span class="red">*</span></td>
+					<td class="tdTitle6">收款人账号：</td>
+					<td class="tdValue6"><input name="text3" type="text"  class="inputText" size="18"/>
+				    <span class="red">*</span></td>
+				  </tr>
+				  <tr>
+				    <td class="tdTitle6">交易状态：</td>
+				    <td class="tdValue6"><select name="select" class="SelectText">
+                      <option>-请选择-</option>
+                    </select></td>
+				    <td class="tdTitle6">&nbsp;</td>
+				    <td class="tdValue6">&nbsp;</td>
+				    <td class="tdTitle6">&nbsp;</td>
+				    <td class="tdValue6">&nbsp;</td>
+			    </tr>
+				  <tr>
+					<td class="tdTitle6">&nbsp;</td>
+					<td colspan="5" >
+					  <input name="button" type="button" class="bottS" value="查询" />
+					  &nbsp;
+					  <input name="button" type="button" class="bottS" value="弹出框" onclick="openWindow()" />
+					  
+					</td>
+				  </tr>
+			  </table>
+
+		  </div>
+		  <div class="BoxCon">
+		  <div class="BoxTitle">
+		    <div  class="titName">批量导入列</div>
+			</div>
+			  <table width="100%" border="0" cellspacing="0" cellpadding="0" class="listTable">
+				  
+				  <tr>
+				    <td class="tdTitle">&nbsp;</td>
+					<td class="tdTitle">交易流水号</td>
+					<td class="tdTitle"> 交易日期</td>
+					<td class="tdTitle">收款人姓名</td>
+					<td class="tdTitle">收款人账号</td>
+					<td class="tdTitle">收款金额</td>
+					<td class="tdTitle">收款银行行名</td>
+					<td class="tdTitle">交易状态</td>
+			      </tr>
+				  <tr>
+					<td class="tdTitle">1</td>
+					<td class="tdValue">88888888</td>
+					<td class="tdValue">张三</td>
+					<td class="tdValue">12.txt</td>
+					<td class="tdValue">100001</td>
+					<td class="tdValue">2014-4-25</td>
+					<td class="tdValue">12.00</td>
+					<td class="tdValue">成功</td>
+				  </tr>
+				    <tr>
+					<td class="tdTitle">2</td>
+					<td class="tdValue">88888888</td>
+					<td class="tdValue">张三</td>
+					<td class="tdValue">12.txt</td>
+					<td class="tdValue">100001</td>
+					<td class="tdValue">2014-4-25</td>
+					<td class="tdValue">12.00</td>
+					<td class="tdValue">成功</td>
+				  </tr>
+				    <tr>
+					<td class="tdTitle">3</td>
+					<td class="tdValue">88888888</td>
+					<td class="tdValue">张三</td>
+					<td class="tdValue">12.txt</td>
+					<td class="tdValue">100001</td>
+					<td class="tdValue">2014-4-25</td>
+					<td class="tdValue">12.00</td>
+					<td class="tdValue">成功</td>
+				  </tr>
+				    <tr>
+					<td class="tdTitle">4</td>
+					<td class="tdValue">88888888</td>
+					<td class="tdValue">张三</td>
+					<td class="tdValue">12.txt</td>
+					<td class="tdValue">100001</td>
+					<td class="tdValue">2014-4-25</td>
+					<td class="tdValue">12.00</td>
+					<td class="tdValue">成功</td>
+				  </tr>
+				    <tr>
+					<td class="tdTitle">5</td>
+					<td class="tdValue">88888888</td>
+					<td class="tdValue">张三</td>
+					<td class="tdValue">12.txt</td>
+					<td class="tdValue">100001</td>
+					<td class="tdValue">2014-4-25</td>
+					<td class="tdValue">12.00</td>
+					<td class="tdValue">成功</td>
+				  </tr>
+				  
+				    <tr>
+					<td class="tdTitle">6</td>
+					<td class="tdValue">88888888</td>
+					<td class="tdValue">张三</td>
+					<td class="tdValue">12.txt</td>
+					<td class="tdValue">100001</td>
+					<td class="tdValue">2014-4-25</td>
+					<td class="tdValue">12.00</td>
+					<td class="tdValue">成功</td>
+				  </tr>
+				    <tr>
+					<td class="tdTitle">7</td>
+					<td class="tdValue">88888888</td>
+					<td class="tdValue">张三</td>
+					<td class="tdValue">12.txt</td>
+					<td class="tdValue">100001</td>
+					<td class="tdValue">2014-4-25</td>
+					<td class="tdValue">12.00</td>
+					<td class="tdValue">成功</td>
+				  </tr>
+				  
+				    <tr>
+					<td class="tdTitle">8</td>
+					<td class="tdValue">88888888</td>
+					<td class="tdValue">张三</td>
+					<td class="tdValue">12.txt</td>
+					<td class="tdValue">100001</td>
+					<td class="tdValue">2014-4-25</td>
+					<td class="tdValue">12.00</td>
+					<td class="tdValue">成功</td>
+				  </tr>
+				    <tr>
+					<td class="tdTitle">9</td>
+					<td class="tdValue">88888888</td>
+					<td class="tdValue">张三</td>
+					<td class="tdValue">12.txt</td>
+					<td class="tdValue">100001</td>
+					<td class="tdValue">2014-4-25</td>
+					<td class="tdValue">12.00</td>
+					<td class="tdValue">成功</td>
+				  </tr>
+				  
+				  <tr>
+					<td class="tdTitle">10</td>
+					<td class="tdValue">88888888</td>
+					<td class="tdValue">张三</td>
+					<td class="tdValue">12.txt</td>
+					<td class="tdValue">100001</td>
+					<td class="tdValue">2014-4-25</td>
+					<td class="tdValue">12.00</td>
+					<td class="tdValue">成功</td>
+				  </tr>
+			  </table>
+
+		</div>
+		<div class="page">
+			<table  border="0" align="right" cellpadding="0" cellspacing="0">
+			  <tr>
+				<td><select class="SelectText"><option>1</option></select></td>
+				<td><img src="../images/pagejg.png" width="3" height="24" /></td>
+				<td><a href="#"><img src="../images/page1.png" border="0"  /></a></td>
+				<td><a href="#"><img src="../images/page2.png" border="0"  /></a></td>
+				<td><img src="../images/pagejg.png" width="3" height="24" /></td>
+				<td>第<span class="tdValue4">
+				  <input name="text3" type="text"  class="inputText" style="width:15px;"/>
+				</span> 共1页 </td>
+				<td><img src="../images/pagejg.png" width="3" height="24" /></td>
+				<td><a href="#"><img src="../images/page3.png" border="0"  /></a></td>
+				<td><a href="#"><img src="../images/page4.png" border="0"  /></a></td>
+				<td><img src="../images/pagejg.png" width="3" height="24" /></td>
+				<td><a href="#"><img src="../images/page5.png" border="0"  /></a></td>
+				<td>显示1到1，共1记录</td>
+				<td>&nbsp;</td>
+			  </tr>
+			</table>
+</div>
+		</div>
+</div>
+<!--弹出层-->
+<div class="windowBg"></div>
+<div class="winBox">
+	<div class="winTiele">转账审核 <div class="close" onclick="closeWin()"></div></div>
+	<div class="windowCon">
+		<table width="100%" border="0" cellspacing="0" cellpadding="0" class="winlistTable">
+		  <tr>
+			<td class="tdTitle">商户号：</td>
+			<td class="tdValue">100001230123</td>
+		  </tr>
+		  <tr>
+			<td class="tdTitle">商户名：				    </td>
+			<td class="tdValue">夏威夷商贸有限公司</td>
+		  </tr>
+		  <tr>
+		    <td class="tdTitle">账户名：</td>
+		    <td class="tdValue">欧阳</td>
+	      </tr>
+		  <tr>
+		    <td class="tdTitle">账户号：</td>
+		    <td class="tdValue">1000123</td>
+	      </tr>
+		  <tr>
+		    <td class="tdTitle">转账金额：</td>
+		    <td class="tdValue">12.00</td>
+	      </tr>
+		  <tr>
+		    <td class="tdTitle">转账说明：</td>
+		    <td class="tdValue">买50个</td>
+	      </tr>
+		  <tr>
+		    <td class="tdTitle">审核意见：<br />
+		      （100个字以内）</td>
+		    <td class="tdValue">
+		        <textarea name="textarea" rows="6" style=" width:95%;"></textarea>		    </td>
+	      </tr>
+		  <tr>
+		    <td colspan="2" align="center" class="ButtPar"><input type="button"  class="butPass" value=""/>&nbsp;<input type="button"class="butRefuse" value="" />&nbsp;<input type="button"class="butClose" value="" onclick="closeWin()"/></td>
+	      </tr>
+		</table>
+	</div>
+</div>
+</body>
+</html>
