@@ -1,0 +1,137 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <META NAME="format-detection" CONTENT="telephone=no" />
+    <title><%title%></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF8" />
+    <meta name="Generator" content="EditPlus">
+    <meta name="Author" content="">
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+    <script type="text/javascript" src="http://include.aifcdn.com/ujs/base/logger/dom.dom/dom.query/ajax/event/ui.panel/ui.autocomplete/ui.exposure/cookie/site/utils.base/05649b0d6dcf6ac5bed03ca14aee15a3.js"></script>
+    <script>
+
+
+
+    </script>
+
+    <style type="text/css">
+        .login{
+            background: #fff;
+        }
+        ul,li{
+            margin: 0;
+            padding:0;
+            list-style: none;
+        }
+        .login li{
+            position: relative;
+            padding:6px 0 6px 103px;
+        }
+        .login .la{
+            position: absolute;
+            left: 43px;;
+            line-height: 30px
+        }
+        .login input{
+            height:24px;
+
+        }
+        .login .btn{
+            width: 90px;
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+            text-align: center;
+            line-height: 33px;;
+        }
+        .login .btn_verify:link,.login .btn_verify:visited{
+            background: #6db417;
+        }
+
+        .login .btn_verify:hover{
+            background: #548a11;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id="dialog">
+        <ul class="login">
+            <li>请先验证手机，您的手机号将仅供微聊使用</li>
+            <li>
+                <label class="la">手机号</label>
+                <input type="text" id="login_tel" placeholder="请输入您的手机号码">
+                <span class="tip"></span>
+            </li>
+
+            <li>
+                <label class="la">验证码</label>
+                <input type="text" id="login_ver" placeholder="请输入您的手机号码">
+                <span class="tip"></span>
+            </li>
+
+
+
+            <li>
+                <a href="###">
+                    <img src="" alt="">
+                    <span>换一张</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="###" style="display: inline-block;height: 33px;" class="btn btn_verify">验证手机</a>
+                <span>您已达到今日发磅短信上限，请明天再试</span>
+            </li>
+
+
+            <li>
+                <label>校验码：</label>
+                <input type="text" value=""/>
+                <span class="tip"></span>
+            </li>
+
+            <li>
+                <input class="btn" type="button" value="提交"/>
+            </li>
+        </ul>
+    </div>
+
+</body>
+<script type="text/javascript">
+    (function () {
+
+        var html= J.g("dialog").html();
+        var panel = new J.ui.panel({
+            autoClose: '',
+            scroll: false,
+            mask: false,
+            modal: true,
+            title: '',
+            content: html,
+            close: true,
+            ok: '',
+            cancel: '',
+            width: 483,
+            height: 375,
+            position: {}, // {top:'',left:'',right:'',bottom:''}
+            drag: false,
+            fixed: '',
+            onClose: null,
+            onOk: null,
+            onCancel: null,
+            custom: null,
+            tpl: 'panel_login'
+        });
+
+
+    }.require([], ['ui.panel_login'], true));
+
+</script>
+</html>
+

@@ -1,0 +1,149 @@
+/*this is head begain*/
+body{ font-size:12px; font-family:"宋体", Arial, Helvetica, sans-serif  ; color:#222222; text-align:center;}
+*{ margin:0px; padding:0px;font-size:12px; font-family:"宋体", Arial, Helvetica, sans-serif  ; }
+td{font-size:12px; font-family:"宋体", Arial, Helvetica, sans-serif;}
+p{line-height:1.5em; }
+ul li{ margin:0px; padding:0px; list-style-type:none;}
+img{ border:0px; vertical-align:middle;}
+a{
+    color:#333;
+    text-decoration:none;
+    line-height:25px;
+}
+a:hover{ text-decoration:underline;}
+
+.topBox{ background:url(../images/topBg.png) repeat-x; height:66px; position:relative;}
+.logo{position:absolute; left:24px; top:0px;}
+.User{ background:url(../images/userBg.png) no-repeat left top; position:absolute; top:0px; right:0px; height:33px; line-height:33px; padding-left:30px;;}
+.toplink{position:absolute; bottom:5px; right:0px; width:300px;}
+.menu{ background:url(../images/menuBg.png) repeat-x; height:42px; position:relative;}
+.menuTitle{
+    background:url(../images/menuTitle.png) no-repeat;
+    position:absolute;
+    width:209px;
+    height:35px;
+    left: 5px;
+    top: 7px;
+}
+
+.menuList{ margin-left:280px;}
+.menuList ul{ display:block}
+.menuList ul li{ display:block; float:left; background:url(../images/mLis_lef.png) no-repeat left center; margin-left:10px;}
+.menuList ul li a{ display:block; position:relative; line-height:42px; padding:0px 25px 0 15px;  color:#FFFFFF; background:url(../images/mLis_rig.png) no-repeat right center;}
+.menuList ul li a i.close{ background:url(../images/closeMenu2.png) no-repeat; width:10px; height:10px; position: absolute; right:8px; top:17px;}
+.menuList ul li a:hover{ text-decoration:none;}
+
+.menuList ul li.dq{ display:block; float:left; background:url(../images/mLisDq_lef.png) no-repeat left bottom; margin-left:10px;}
+.menuList ul li.dq a{ display:block; position:relative; line-height:42px; padding:0px 25px 0 15px;  color:#333; background:url(../images/mLisDq_rig.png) no-repeat right bottom;}
+.menuList ul li.dq a i.close{ background:url(../images/closeMenu.png) no-repeat; width:10px; height:10px; position: absolute; right:8px; top:17px;}
+
+/*弹出层*/
+.windowBg{ background:#000000; position:fixed; width:100%; height:100%; top:0; left:0; z-index:1; display:none;
+    filter:Alpha(Opacity=30);
+    /* IE */
+    -moz-opacity:0.4;
+    /* Moz + FF */
+    opacity: 0.4;}
+
+
+/*this is head end*/
+
+
+
+/*this is left menu begain */
+body{ font-size:12px; font-family:"宋体", Arial, Helvetica, sans-serif  ; color:#222222; text-align:center;background:url(../images/leftBg.png); padding:0px 5px;}
+td{font-size:12px; font-family:"宋体", Arial, Helvetica, sans-serif;}
+p{line-height:1.5em; }
+ul li{ margin:0px; padding:0px; list-style-type:none;}
+img{ border:0px; vertical-align:middle;}
+a{
+    color:#333;
+    text-decoration:none;
+}
+a:hover{ text-decoration:underline; }
+
+.nav{ background:#C5BDA7; padding:4px 3px 35px 3px;}
+.nav ul{ background:#FFFFFF;}
+.nav ul li{ display:block; background: url(../images/menu1bg.png) repeat-x top; margin-top:1px; text-align:left;}
+.nav ul li a{display:block; line-height:40px;  padding-left:30px; background:url(../images/dian.png) no-repeat 15px center ;}
+
+.nav ul li ul{ display:none; border: #FFFFFF  solid 2px;}
+.nav ul li ul li{ background:#FFF4CE; }
+.nav ul li ul li a{padding-left:40px; background:url(../images/dian2.png) no-repeat 25px center;}
+
+.nav ul li ul ul li{ background:none;}
+.nav ul li ul ul li a{padding-left:50px; background: url(../images/dian3.png) no-repeat 35px center;}
+.nav ul li ul ul li a:hover{ color:#F07B18;}
+/*弹出层*/
+.windowBg{ background:#000000; position:fixed; width:100%; height:100%; top:0; left:0; z-index:1; display:none;
+    filter:Alpha(Opacity=30);
+    /* IE */
+    -moz-opacity:0.4;
+    /* Moz + FF */
+    opacity: 0.4;}
+
+/*this is left menu end */
+
+
+
+/*mind begain */
+.sep{
+
+
+    background: url(../images/mindBar.png) repeat-y center;
+    height: 100%;
+    float: left;
+}
+.sep{
+    height: 100%;
+    line-height: 100%;
+    position: relative;
+    float: left;
+    width: 6px;
+   /* position: relative;
+    top: 50%;
+    margin-top: -51px;
+    display: inline-block;*/
+}
+.l{
+    width: 219px;
+    float: left;
+}
+.r{
+    float: left;
+    height:100%;
+}
+.container{
+    height: 100%;
+}
+html,body{
+    height: 100%;
+}
+.clearfix:after, #content:after {
+    clear: both;
+    content: ".";
+    display: block;
+    font-size: 0;
+    height: 0;
+    line-height: 0;
+    visibility: hidden;
+}
+#left_toggle{
+    display: inline-block;
+    width: 6px;
+    height: 103px;
+    background: url("../images/mClose.png");
+    position: absolute;
+    top: 50%;
+    left: 0;
+    margin-top:-51.5px; ;
+
+}
+.block_iframe{
+    width: 100%;
+    height: 100%;
+}
+
+/*mind end*/
+
+

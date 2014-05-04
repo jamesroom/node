@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>无标题文档</title>
+    <link rel="stylesheet" rev="stylesheet" href="css/base.css" type="text/css" />
+    <script type="text/javascript" src="js/jquery-1.5.min.js"></script>
+<script type="text/javascript">
+</script>
+</head>
+
+<!--<frameset rows="108,*" cols="*" frameborder="no" border="0" framespacing="0">
+  <frame src="top.html" name="topFrame" scrolling="No" noresize="noresize" id="topFrame" title="topFrame" />
+  <frameset cols="219,6,*" name="cen" frameborder="no" border="0" framespacing="0">
+    <frame src="left.html" name="leftFrame" noresize="noresize" id="leftFrame" title="leftFrame" />
+	<frame src="mind.html" name="mindFrame" scrolling="No" noresize="noresize" id="mindFrame" title="mindFrame" />
+    <frame src="welcome.html" name="mainFrame" id="mainFrame" title="mainFrame" />
+  </frameset>-->
+  <!--<frame src="footbar.html" name="bottFrame" scrolling="No" noresize="noresize" id="bottFrame" title="bottFrame" />-->
+<!--</frameset>
+<noframes>-->
+<body>
+    <div class="head">
+        <div class="topBox">
+            <div class="logo"><img src="images/logo.png" /></div>
+            <div class="User">当前登录用户：admin  上次登录时间：2014年4月25日09:53</div>
+            <div class="toplink">
+                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td align="right"><a href="#"><img src="images/topIco1.png" /></a></td>
+                        <td align="left"><a class="item_open" id="home_page" onclick="return false" data-href="welcome.html"  href="welcome.html">首页</a></td>
+                        <td align="right"><a href="#"><img src="images/topIco2.png" /></a></td>
+                        <td align="left"><a href="#">基础信息</a></td>
+                        <td align="right"><a href="#"><img src="images/topIco3.png" /></a></td>
+                        <td align="left"><a href="#">退出登录</a></td>
+                    </tr>
+                </table>
+
+            </div>
+        </div>
+        <div class="menu">
+            <div class="menuTitle"></div>
+            <div class="menuList">
+                <ul>
+                 <!--   <li class="dq"><a href="welcome.html"target="mainFrame">首页<i class="close" onclick="alert('关闭菜单事件')"></i></a></li>
+                    <li><a href="daifu\daifu.html" target="mainFrame">账户金额查询<i class="close"></i></a></li>
+                    <li><a href="daifu\daifu2.html" target="mainFrame">账户明细查询<i class="close"></i></a></li>
+                    <li><a href="daifu\luru.html" target="mainFrame">账户明细查询<i class="close"></i></a></li>
+                    <li><a href="daifu\piliang.html" target="mainFrame">账户明细查询<i class="close"></i></a></li>
+                    <li><a href="daifu\window.html" target="mainFrame">账户明细查询<i class="close"></i></a></li>-->
+                </ul>
+            </div>
+        </div>
+        <!--弹出层-->
+        <div class="windowBg"></div>
+    </div>
+    <div class="container clearfix">
+        <div class="l" id="left_bar" style="">
+            <div class="nav">
+                <ul>
+                    <li><a href="#">代付管理</a>
+                        <ul class="child">
+                            <li><a href="#">二级菜单</a>
+                                <ul class="child">
+                                    <li class="item_open"><a onclick="return false;" data-href="./daifu/daifu.html" href="daifu/daifu.html" >三级菜单</a></li>
+                                    <li class="item_open"><a onclick="return false;" data-href="./welcome1.html" href="daifu/daifu.html" >批量代收业务录入</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">代收业务录入</a>
+                                <ul class="child">
+                                    <li><a href="#">三级菜单</a></li>
+                                    <li><a href="#">批量代收业务录入</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">代付业务审批</a>
+                                <ul class="child">
+                                    <li><a href="#">三级菜单</a></li>
+                                    <li><a href="#">批量代收业务录入</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">代收业务审批</a>
+                                <ul class="child">
+                                    <li><a href="#">三级菜单</a></li>
+                                    <li><a href="#">批量代收业务录入</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="#">查询功能</a>
+                        <ul class="child">
+                            <li><a href="#">二级菜单</a>
+                                <ul>
+                                    <li><a href="#">三级菜单</a></li>
+                                    <li><a href="#">批量代收业务录入</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="#">商户账户查询</a>
+                        <ul class="child">
+                            <li><a href="#">二级菜单</a>
+                                <ul class="child">
+                                    <li><a href="#">三级菜单</a></li>
+                                    <li><a href="#">批量代收业务录入</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="#">商户账户转账</a>
+                        <ul class="child">
+                            <li><a href="#">二级菜单</a>
+                                <ul class="child">
+                                    <li><a href="#">三级菜单</a></li>
+                                    <li><a href="#">批量代收业务录入</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!--弹出层-->
+            <div class="windowBg"></div>
+        </div>
+        <div class="sep">
+            <a href="###" onclick='' id="left_toggle"></a>
+        </div>
+        <div class="r">
+           <!-- <div class="block_iframe">
+                <iframe frameborder="0" width="100%" height="100%" src="welcome.html"></iframe>
+            </div>-->
+        </div>
+    </div>
+
+    <script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript">
+    $("#home_page").click();
+</script>
+</body>
+</noframes></html>
