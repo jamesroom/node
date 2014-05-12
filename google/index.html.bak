@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <script type="text/javascript" src="jockjs.js"></script>
+
+    <script type="text/javascript" src="baidu.js"></script>
+
+    <link type="text/css" href="index.css" rel="stylesheet"/>
+</head>
+<body>
+
+
+<div id="map_block" class="map_block area_view">
+<div class="title">
+    <span id="btnArea_map" class="hover">周边配套</span>
+    <span  class="sep">|</span>
+    <span id="btnStreet_map">街景</span>
+</div>
+    <div class="c">
+<ul class="chks clearfix">
+    <li class="trafic">
+        <input type="checkbox" id="chk_traffic">
+        <span class="tip"></span>
+        <label for="chk_trafic">交通</label>
+    </li>
+    <li class="school">
+        <input type="checkbox" id="chk_school">
+        <span class="tip"></span>
+        <label for="chk_school">学校</label>
+    </li>
+    <li class="hospital">
+        <input type="checkbox" id="chk_hospital">
+        <span class="tip"></span>
+        <label for="chk_hospital">医院</label>
+    </li>
+    <li class="restaurant">
+        <input type="checkbox" id="chk_restaurant">
+        <span class="tip"></span>
+        <label for="chk_restaurant">餐馆</label>
+    </li>
+    <li class="bank">
+        <input type="checkbox" id="chk_bank">
+        <span class="tip"></span>
+        <label for="chk_bank">银行</label>
+    </li>
+    <li class="market">
+        <input type="checkbox" id="chk_market">
+        <span class="tip"></span>
+        <label for="chk_market">商场超市</label>
+    </li>
+</ul>
+<div class="l">
+    <div id="map_container"></div>
+    <div class="ms clearfix">
+        <div class='ms_l'>
+            <label>本小区：</label>
+            <a href="###">浦发绿城</a>
+            <label>均价：</label>
+            <span>21254元/m2</span>
+        </div>
+        <div class="ms_r">
+            <label>附近楼盘：</label><a href="###">凤凰城</a>
+            <label>均价：</label><span>21254元/m2</span>
+            <span class="addr_tip">770米</span>
+        </div>
+    </div>
+    <div class="bottom">
+        <b>路线查询：</b>
+                    <span class="begain">
+                        <label>起点</label>
+                        <input type="text" value="安居客">
+                    </span><span class="change"></span><span class="end">
+                        <label>终点</label>
+                        <input type="text" value="浦发绿城">
+                    </span><a class="btn" href="###">查询</a>
+    </div>
+</div>
+<div id="for_scroll" class="clearfix">
+<div class="r auto" id="map_content">
+<div class="way" style="display: none">
+    <div class="tab">
+        <span class="bybus hover">公交</span>
+        <span class="bycar">驾车</span>
+    </div>
+    <div class="scroll_obj">
+        <div class="gre">
+            <div style="display: none" id="none_for_baidy"></div>
+            <span class="g">地铁7号线</span>
+            <span class="right_tip"></span>
+            <span class="g">地铁６号线</span>
+            <span class="long">全程约30分钟/8.0公里</span>
+        </div>
+        <div class="begain"></div>
+        <ul>
+           <li>
+                乘坐
+                <a href="###">徐川专线</a>，
+                在<a href="###">高科西路站</a>下车
+            </li>
+            <li>
+                乘坐
+                <a href="###">徐川专线</a>，
+                在<a href="###">高科西路站</a>下车
+            </li>
+            <li>
+                乘坐
+                <a href="###">徐川专线</a>，
+                在<a href="###">高科西路站</a>下车
+            </li>
+            <li>
+                乘坐
+                <a href="###">徐川专线</a>，
+                在<a href="###">高科西路站</a>下车
+            </li>
+            <li>
+                乘坐
+                <a href="###">徐川专线</a>，
+                在<a href="###">高科西路站</a>下车
+            </li>
+            <li>
+                乘坐
+                <a href="###">徐川专线</a>，
+                在<a href="###">高科西路站</a>下车
+            </li>
+
+            <li>步行至&nbsp;同成大厦</li>
+        </ul>
+		<ul>
+           <li>
+                乘坐
+                <a href="###">徐川专线</a>，
+                在<a href="###">高科西路站</a>下车
+            </li>
+            <li>
+                乘坐
+                <a href="###">徐川专线</a>，
+                在<a href="###">高科西路站</a>下车
+            </li>
+            <li>
+                乘坐
+                <a href="###">徐川专线</a>，
+                在<a href="###">高科西路站</a>下车
+            </li>
+            <li>
+                乘坐
+                <a href="###">徐川专线</a>，
+                在<a href="###">高科西路站</a>下车
+            </li>
+            <li>
+                乘坐
+                <a href="###">徐川专线</a>，
+                在<a href="###">高科西路站</a>下车
+            </li>
+            <li>
+                乘坐
+                <a href="###">徐川专线</a>，
+                在<a href="###">高科西路站</a>下车
+            </li>
+
+            <li>步行至&nbsp;同成大厦</li>
+        </ul>
+		<ul>
+           <li>
+                乘坐
+                <a href="###">徐川专线</a>，
+                在<a href="###">高科西路站</a>下车
+            </li>
+            <li>
+                乘坐
+                <a href="###">徐川专线</a>，
+                在<a href="###">高科西路站</a>下车
+            </li>
+            <li>
+                乘坐
+                <a href="###">徐川专线</a>，
+                在<a href="###">高科西路站</a>下车
+            </li>
+            <li>
+                乘坐
+                <a href="###">徐川专线</a>，
+                在<a href="###">高科西路站</a>下车
+            </li>
+            <li>
+                乘坐
+                <a href="###">徐川专线</a>，
+                在<a href="###">高科西路站</a>下车
+            </li>
+            <li>
+                乘坐
+                <a href="###">徐川专线</a>，
+                在<a href="###">高科西路站</a>下车
+            </li>
+
+            <li>步行至&nbsp;同成大厦</li>
+        </ul>
+		<ul>
+           <li>
+                乘坐
+                <a href="###">徐川专线</a>，
+                在<a href="###">高科西路站</a>下车
+            </li>
+            <li>
+                乘坐
+                <a href="###">徐川专线</a>，
+                在<a href="###">高科西路站</a>下车
+            </li>
+            <li>
+                乘坐
+                <a href="###">徐川专线</a>，
+                在<a href="###">高科西路站</a>下车
+            </li>
+            <li>
+                乘坐
+                <a href="###">徐川专线</a>，
+                在<a href="###">高科西路站</a>下车
+            </li>
+            <li>
+                乘坐
+                <a href="###">徐川专线</a>，
+                在<a href="###">高科西路站</a>下车
+            </li>
+            <li>
+                乘坐
+                <a href="###">徐川专线</a>，
+                在<a href="###">高科西路站</a>下车
+            </li>
+
+            <li>步行至&nbsp;同成大厦</li>
+        </ul>
+		<ul>
+           <li>
+                乘坐
+                <a href="###">徐川专线</a>，
+                在<a href="###">高科西路站</a>下车
+            </li>
+            <li>
+                乘坐
+                <a href="###">徐川专线</a>，
+                在<a href="###">高科西路站</a>下车
+            </li>
+            <li>
+                乘坐
+                <a href="###">徐川专线</a>，
+                在<a href="###">高科西路站</a>下车
+            </li>
+            <li>
+                乘坐
+                <a href="###">徐川专线</a>，
+                在<a href="###">高科西路站</a>下车
+            </li>
+            <li>
+                乘坐
+                <a href="###">徐川专线</a>，
+                在<a href="###">高科西路站</a>下车
+            </li>
+            <li>
+                乘坐
+                <a href="###">徐川专线</a>，
+                在<a href="###">高科西路站</a>下车
+            </li>
+
+            <li>步行至&nbsp;同成大厦</li>
+        </ul>
+        <div class="end"></div>
+    </div>
+</div>
+
+
+<div class="def" style="display: none">
+    <div class="region">
+        <div class="font_b">
+            <b>本小区：</b>
+            <a href="###">浦发绿城</a>
+        </div>
+        <div>[浦东－三林]－永泰路９９弄</div>
+        <em>895411元/平方</em>
+    </div>
+
+    <div class="region">
+        <div class="font_b">
+            <b>附近楼盘：</b>
+            <a href="###">浦发绿城</a>
+        </div>
+        <div>[浦东－三林]－永泰路９９弄,<span class="addr_tip">997米</span></div>
+        <em>12365元/平方</em>
+    </div>
+    <div class="region">
+        <a class="btn" href="###">地图找周边房源</a>
+    </div>
+</div>
+
+
+</div>
+
+<!--for scroll begain-->
+<div class="Vscroll" style="display: none;">
+    <div class="Vp1"></div>
+    <div class="VblockContainer VblockContainerhover">
+        <div class="Vblock">
+            <div class='VtAndl'></div>
+            <div class="Vmiddle"></div>
+            <div class='VbAndr'></div>
+        </div>
+    </div>
+    <div class="Vp2"></div>
+</div>
+<!--for scroll end-->
+
+
+</div>
+<script>
+</script>
+</div>
+    <div id="soso_view" class="soso_view">
+    </div>
+    <div id="soso_small" class="soso_small">
+    </div>
+</div>
+
+<link type="text/css" href="./scroll/Scrollbar.css" rel="stylesheet"/>
+<script type="text/javascript" src="./scroll/Scrollbar.js"></script>
+<script type="text/javascript" src="./index.js"></script>
+
+
+<script type="text/javascript">
+    //切换街景和地图展示
+    ;(function(){
+        var btnViewArea = J.g('btnArea_map');
+        var btnStreetView =  J.g('btnStreet_map')
+        var content = J.g("map_block");
+
+        if(!btnViewArea||!btnStreetView){
+            return;
+        }
+        btnStreetView.on('click',function(){
+            btnStreetView.addClass('hover');
+            btnViewArea.removeClass('hover');
+            content.removeClass("area_view")
+
+        });
+        btnViewArea.on('click',function(){
+            btnViewArea.addClass('hover');
+            btnStreetView.removeClass('hover');
+            content.addClass("area_view")
+
+
+        });
+
+
+
+    })();
+
+</script>
+
+</body>
+</html>

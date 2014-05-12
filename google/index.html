@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <script type="text/javascript" src="jockjs.js"></script>
+
+    <script type="text/javascript" src="baidu.js"></script>
+
+    <link type="text/css" href="index.css" rel="stylesheet"/>
+</head>
+<body>
+
+
+<div id="map_block" class="map_block area_view">
+<div class="title">
+    <span id="btnArea_map" class="hover">周边配套</span>
+    <span  class="sep">|</span>
+    <span id="btnStreet_map">街景</span>
+</div>
+    <div class="c">
+<ul class="chks clearfix">
+    <li class="trafic">
+        <input type="checkbox" id="chk_traffic">
+        <span class="tip"></span>
+        <label for="chk_trafic">交通</label>
+    </li>
+    <li class="school">
+        <input type="checkbox" id="chk_school">
+        <span class="tip"></span>
+        <label for="chk_school">学校</label>
+    </li>
+    <li class="hospital">
+        <input type="checkbox" id="chk_hospital">
+        <span class="tip"></span>
+        <label for="chk_hospital">医院</label>
+    </li>
+    <li class="restaurant">
+        <input type="checkbox" id="chk_restaurant">
+        <span class="tip"></span>
+        <label for="chk_restaurant">餐馆</label>
+    </li>
+    <li class="bank">
+        <input type="checkbox" id="chk_bank">
+        <span class="tip"></span>
+        <label for="chk_bank">银行</label>
+    </li>
+    <li class="market">
+        <input type="checkbox" id="chk_market">
+        <span class="tip"></span>
+        <label for="chk_market">商场超市</label>
+    </li>
+</ul>
+<div class="l">
+    <div id="map_container"></div>
+    <div class="ms clearfix">
+        <div class='ms_l'>
+            <label>本小区：</label>
+            <a href="###">浦发绿城</a>
+            <label>均价：</label>
+            <span>21254元/m2</span>
+        </div>
+        <div class="ms_r">
+            <label>附近楼盘：</label><a href="###">凤凰城</a>
+            <label>均价：</label><span>21254元/m2</span>
+            <span class="addr_tip">770米</span>
+        </div>
+    </div>
+    <div class="bottom">
+        <b>路线查询：</b>
+                    <span class="begain">
+                        <label>起点</label>
+                        <input type="text" value="安居客">
+                    </span><span class="change"></span><span class="end">
+                        <label>终点</label>
+                        <input type="text" value="浦发绿城">
+                    </span><a class="btn" href="###">查询</a>
+    </div>
+</div>
+<div id="for_scroll" class="clearfix">
+<div class="r auto" id="map_content">
+<dl class="item school"><dt>学校</dt><dd class=""><span class="tip"></span><em>907米</em><div><a href="###">上海外国语大学尚阳外国语学校</a>&nbsp;-&nbsp;<label>祁连山南路2671号</label></div></dd><dd><span class="tip"></span><em>1517米</em><div><a href="###">上海市曹杨中学</a>&nbsp;-&nbsp;<label>祁连山南路1069号</label></div></dd><dd><span class="tip"></span><em>1649米</em><div><a href="###">上海市玉华中学</a>&nbsp;-&nbsp;<label>金汤路269号(高陵路口)</label></div></dd><dd class=""><span class="tip"></span><em>2036米</em><div><a href="###">上海信息技术学校</a>&nbsp;-&nbsp;<label>普陀区真南路1008号(近祁连山路)</label></div></dd><dd><span class="tip"></span><em>2110米</em><div><a href="###">上海应用技术学院普陀教学部</a>&nbsp;-&nbsp;<label>真南路1008</label></div></dd></dl>
+
+<dl class="item school"><dt>学校</dt><dd class=""><span class="tip"></span><em>907米</em><div><a href="###">上海外国语大学尚阳外国语学校</a>&nbsp;-&nbsp;<label>祁连山南路2671号</label></div></dd><dd><span class="tip"></span><em>1517米</em><div><a href="###">上海市曹杨中学</a>&nbsp;-&nbsp;<label>祁连山南路1069号</label></div></dd><dd><span class="tip"></span><em>1649米</em><div><a href="###">上海市玉华中学</a>&nbsp;-&nbsp;<label>金汤路269号(高陵路口)</label></div></dd><dd class=""><span class="tip"></span><em>2036米</em><div><a href="###">上海信息技术学校</a>&nbsp;-&nbsp;<label>普陀区真南路1008号(近祁连山路)</label></div></dd><dd><span class="tip"></span><em>2110米</em><div><a href="###">上海应用技术学院普陀教学部</a>&nbsp;-&nbsp;<label>真南路1008</label></div></dd></dl>
+<dl class="item school"><dt>学校</dt><dd class=""><span class="tip"></span><em>907米</em><div><a href="###">上海外国语大学尚阳外国语学校</a>&nbsp;-&nbsp;<label>祁连山南路2671号</label></div></dd><dd><span class="tip"></span><em>1517米</em><div><a href="###">上海市曹杨中学</a>&nbsp;-&nbsp;<label>祁连山南路1069号</label></div></dd><dd><span class="tip"></span><em>1649米</em><div><a href="###">上海市玉华中学</a>&nbsp;-&nbsp;<label>金汤路269号(高陵路口)</label></div></dd><dd class=""><span class="tip"></span><em>2036米</em><div><a href="###">上海信息技术学校</a>&nbsp;-&nbsp;<label>普陀区真南路1008号(近祁连山路)</label></div></dd><dd><span class="tip"></span><em>2110米</em><div><a href="###">上海应用技术学院普陀教学部</a>&nbsp;-&nbsp;<label>真南路1008</label></div></dd></dl>
+<dl class="item school"><dt>学校</dt><dd class=""><span class="tip"></span><em>907米</em><div><a href="###">上海外国语大学尚阳外国语学校</a>&nbsp;-&nbsp;<label>祁连山南路2671号</label></div></dd><dd><span class="tip"></span><em>1517米</em><div><a href="###">上海市曹杨中学</a>&nbsp;-&nbsp;<label>祁连山南路1069号</label></div></dd><dd><span class="tip"></span><em>1649米</em><div><a href="###">上海市玉华中学</a>&nbsp;-&nbsp;<label>金汤路269号(高陵路口)</label></div></dd><dd class=""><span class="tip"></span><em>2036米</em><div><a href="###">上海信息技术学校</a>&nbsp;-&nbsp;<label>普陀区真南路1008号(近祁连山路)</label></div></dd><dd><span class="tip"></span><em>2110米</em><div><a href="###">上海应用技术学院普陀教学部</a>&nbsp;-&nbsp;<label>真南路1008</label></div></dd></dl>
+<dl class="item school"><dt>学校</dt><dd class=""><span class="tip"></span><em>907米</em><div><a href="###">上海外国语大学尚阳外国语学校</a>&nbsp;-&nbsp;<label>祁连山南路2671号</label></div></dd><dd><span class="tip"></span><em>1517米</em><div><a href="###">上海市曹杨中学</a>&nbsp;-&nbsp;<label>祁连山南路1069号</label></div></dd><dd><span class="tip"></span><em>1649米</em><div><a href="###">上海市玉华中学</a>&nbsp;-&nbsp;<label>金汤路269号(高陵路口)</label></div></dd><dd class=""><span class="tip"></span><em>2036米</em><div><a href="###">上海信息技术学校</a>&nbsp;-&nbsp;<label>普陀区真南路1008号(近祁连山路)</label></div></dd><dd><span class="tip"></span><em>2110米</em><div><a href="###">上海应用技术学院普陀教学部</a>&nbsp;-&nbsp;<label>真南路1008</label></div></dd></dl>
+<dl class="item school"><dt>学校</dt><dd class=""><span class="tip"></span><em>907米</em><div><a href="###">上海外国语大学尚阳外国语学校</a>&nbsp;-&nbsp;<label>祁连山南路2671号</label></div></dd><dd><span class="tip"></span><em>1517米</em><div><a href="###">上海市曹杨中学</a>&nbsp;-&nbsp;<label>祁连山南路1069号</label></div></dd><dd><span class="tip"></span><em>1649米</em><div><a href="###">上海市玉华中学</a>&nbsp;-&nbsp;<label>金汤路269号(高陵路口)</label></div></dd><dd class=""><span class="tip"></span><em>2036米</em><div><a href="###">上海信息技术学校</a>&nbsp;-&nbsp;<label>普陀区真南路1008号(近祁连山路)</label></div></dd><dd><span class="tip"></span><em>2110米</em><div><a href="###">上海应用技术学院普陀教学部</a>&nbsp;-&nbsp;<label>真南路1008</label></div></dd></dl>
+
+<div class="way" style="display: none">
+    <div class="tab">
+        <span class="bybus hover">公交</span>
+        <span class="bycar">驾车</span>
+    </div>
+    <div class="scroll_obj">
+        <div class="gre">
+            <div style="display: none" id="none_for_baidy"></div>
+            <span class="g">地铁7号线</span>
+            <span class="right_tip"></span>
+            <span class="g">地铁６号线</span>
+            <span class="long">全程约30分钟/8.0公里</span>
+        </div>
+        <div class="begain"></div>
+        <ul>
+           <li>
+                乘坐
+                <a href="###">徐川专线</a>，
+                在<a href="###">高科西路站</a>下车
+            </li>
+            <li>
+                乘坐
+                <a href="###">徐川专线</a>，
+                在<a href="###">高科西路站</a>下车
+            </li>
+            <li>
+                乘坐
+                <a href="###">徐川专线</a>，
+                在<a href="###">高科西路站</a>下车
+            </li>
+            <li>
+                乘坐
+                <a href="###">徐川专线</a>，
+                在<a href="###">高科西路站</a>下车
+            </li>
+            <li>
+                乘坐
+                <a href="###">徐川专线</a>，
+                在<a href="###">高科西路站</a>下车
+            </li>
+            <li>
+                乘坐
+                <a href="###">徐川专线</a>，
+                在<a href="###">高科西路站</a>下车
+            </li>
+
+            <li>步行至&nbsp;同成大厦</li>
+        </ul>
+<!--		<ul>
+           <li>
+                乘坐
+                <a href="###">徐川专线</a>，
+                在<a href="###">高科西路站</a>下车
+            </li>
+            <li>
+                乘坐
+                <a href="###">徐川专线</a>，
+                在<a href="###">高科西路站</a>下车
+            </li>
+            <li>
+                乘坐
+                <a href="###">徐川专线</a>，
+                在<a href="###">高科西路站</a>下车
+            </li>
+            <li>
+                乘坐
+                <a href="###">徐川专线</a>，
+                在<a href="###">高科西路站</a>下车
+            </li>
+            <li>
+                乘坐
+                <a href="###">徐川专线</a>，
+                在<a href="###">高科西路站</a>下车
+            </li>
+            <li>
+                乘坐
+                <a href="###">徐川专线</a>，
+                在<a href="###">高科西路站</a>下车
+            </li>
+
+            <li>步行至&nbsp;同成大厦</li>
+        </ul>
+		<ul>
+           <li>
+                乘坐
+                <a href="###">徐川专线</a>，
+                在<a href="###">高科西路站</a>下车
+            </li>
+            <li>
+                乘坐
+                <a href="###">徐川专线</a>，
+                在<a href="###">高科西路站</a>下车
+            </li>
+            <li>
+                乘坐
+                <a href="###">徐川专线</a>，
+                在<a href="###">高科西路站</a>下车
+            </li>
+            <li>
+                乘坐
+                <a href="###">徐川专线</a>，
+                在<a href="###">高科西路站</a>下车
+            </li>
+            <li>
+                乘坐
+                <a href="###">徐川专线</a>，
+                在<a href="###">高科西路站</a>下车
+            </li>
+            <li>
+                乘坐
+                <a href="###">徐川专线</a>，
+                在<a href="###">高科西路站</a>下车
+            </li>
+
+            <li>步行至&nbsp;同成大厦</li>
+        </ul>
+		<ul>
+           <li>
+                乘坐
+                <a href="###">徐川专线</a>，
+                在<a href="###">高科西路站</a>下车
+            </li>
+            <li>
+                乘坐
+                <a href="###">徐川专线</a>，
+                在<a href="###">高科西路站</a>下车
+            </li>
+            <li>
+                乘坐
+                <a href="###">徐川专线</a>，
+                在<a href="###">高科西路站</a>下车
+            </li>
+            <li>
+                乘坐
+                <a href="###">徐川专线</a>，
+                在<a href="###">高科西路站</a>下车
+            </li>
+            <li>
+                乘坐
+                <a href="###">徐川专线</a>，
+                在<a href="###">高科西路站</a>下车
+            </li>
+            <li>
+                乘坐
+                <a href="###">徐川专线</a>，
+                在<a href="###">高科西路站</a>下车
+            </li>
+
+            <li>步行至&nbsp;同成大厦</li>
+        </ul>
+		<ul>
+           <li>
+                乘坐
+                <a href="###">徐川专线</a>，
+                在<a href="###">高科西路站</a>下车
+            </li>
+            <li>
+                乘坐
+                <a href="###">徐川专线</a>，
+                在<a href="###">高科西路站</a>下车
+            </li>
+            <li>
+                乘坐
+                <a href="###">徐川专线</a>，
+                在<a href="###">高科西路站</a>下车
+            </li>
+            <li>
+                乘坐
+                <a href="###">徐川专线</a>，
+                在<a href="###">高科西路站</a>下车
+            </li>
+            <li>
+                乘坐
+                <a href="###">徐川专线</a>，
+                在<a href="###">高科西路站</a>下车
+            </li>
+            <li>
+                乘坐
+                <a href="###">徐川专线</a>，
+                在<a href="###">高科西路站</a>下车
+            </li>
+
+            <li>步行至&nbsp;同成大厦</li>
+        </ul>-->
+        <div class="end"></div>
+    </div>
+</div>
+
+
+<div class="def" style="display: none">
+    <div class="region">
+        <div class="font_b">
+            <b>本小区：</b>
+            <a href="###">浦发绿城</a>
+        </div>
+        <div>[浦东－三林]－永泰路９９弄</div>
+        <em>895411元/平方</em>
+    </div>
+
+    <div class="region">
+        <div class="font_b">
+            <b>附近楼盘：</b>
+            <a href="###">浦发绿城</a>
+        </div>
+        <div>[浦东－三林]－永泰路９９弄,<span class="addr_tip">997米</span></div>
+        <em>12365元/平方</em>
+    </div>
+    <div class="region">
+        <a class="btn" href="###">地图找周边房源</a>
+    </div>
+</div>
+
+
+</div>
+
+
+
+
+</div>
+<script>
+</script>
+</div>
+    <div id="soso_view" class="soso_view">
+    </div>
+    <div id="soso_small" class="soso_small">
+    </div>
+</div>
+
+<link type="text/css" href="./scroll/Scrollbar.css" rel="stylesheet"/>
+<script type="text/javascript" src="./scroll/Scrollbar.js"></script>
+/*
+<script type="text/javascript" src="./index.js"></script>
+*/
+
+<script type="text/javascript">
+    //切换街景和地图展示
+    ;(function(){
+        var btnViewArea = J.g('btnArea_map');
+        var btnStreetView =  J.g('btnStreet_map')
+        var content = J.g("map_block");
+
+        if(!btnViewArea||!btnStreetView){
+            return;
+        }
+        btnStreetView.on('click',function(){
+            btnStreetView.addClass('hover');
+            btnViewArea.removeClass('hover');
+            content.removeClass("area_view")
+
+        });
+        btnViewArea.on('click',function(){
+            btnViewArea.addClass('hover');
+            btnStreetView.removeClass('hover');
+            content.addClass("area_view")
+
+
+        });
+
+
+
+    })();
+
+</script>
+<script type="text/javascript">
+
+    (function(){
+        function scrollBar(option){
+            var defOpts={
+                elm:'',
+                x:0,
+                y:0,
+                buildPosition:null
+            },
+                    opts,
+                    H,//滚动条所在的高度
+                    containerH,
+                    runObj,
+                    greyElm,
+                    container,
+                    JScrollElm,
+                    pointStart,
+                    scrollObj;
+
+
+
+            (function(){
+                opts = J.mix(defOpts,option||{});
+                container = opts.elm;
+                scrollObj = createScrollBar();
+                JScrollElm = J.g(scrollObj);
+                buildPosition.call(scrollObj);
+                container.up(0).append(scrollObj);
+                greyElm = J.g(scrollObj).s(".Vmiddle").eq(0);
+                runObj = greyElm.up(0).get();
+                bindEvent();
+                calcScrollHeight();
+                scrollObj.setCapture()
+
+            })();
+            function bindEvent(){
+                J.on(scrollObj,'mouseenter',onMouseOver)
+                J.on(scrollObj,'mouseleave',onMouseOut);
+
+                J.on(scrollObj,'mousewheel',mousewheel);
+                J.on(container,'mousewheel',mousewheel);
+
+                J.on(greyElm,'mousedown',mousedownHandler)
+
+                J.on(scrollObj,'click',function(){
+                    alert(1);
+                })
+
+
+            }
+            function scrollBarRun(num,e){
+                var needBubble = false;
+                var begain = parseInt(runObj.style.top|| 0);
+                var end = begain + num;
+                if(!JScrollElm.visible()){
+                    needBubble = true;
+                }
+                if(end<0){
+                    end =0;
+                    needBubble = true;
+                }
+                var greyH = greyElm.height()+8;
+                if(end+ greyH>H){
+                    end = H-greyH;
+                    needBubble = true;
+
+                }
+
+                runObj.style.top=end+'px';
+                container.get().scrollTop= end/H*containerH;
+                !needBubble&&cancleBubble(e);
+
+            }
+
+
+
+            function onMouseOver(){
+                JScrollElm.addClass('VscrollHover')
+            }
+            function onMouseOut(){
+                JScrollElm.removeClass('VscrollHover')
+            }
+
+            function documentMouseMove(e){
+                var num = e.y -pointStart.y;
+                pointStart.y = e.y;
+                 scrollBarRun(num)
+
+            }
+
+            function documentMouseUp(e){
+
+                J.un(document,'mousemove',documentMouseMove)
+                J.un(document,'mouseup',documentMouseUp)
+            }
+            function mousedownHandler(e){
+                pointStart={};
+                pointStart.x = e.x;
+                pointStart.y = e.y;
+                J.on(document,'mousemove',documentMouseMove)
+                J.on(document,'mouseup',documentMouseUp)
+            }
+
+            function mousewheel(e){
+                var e = e || window.event;
+                var num =40;
+                num = e.wheelDelta>0? -num: num;
+                scrollBarRun(num,e);
+                //e.stop();
+                //isCancleBubble()&&(e.stopPropagation?e.stopPropagation():(e.cancelBubble=true));
+            }
+
+            /**
+             * 实时计算scroll的高度
+             */
+            function calcScrollHeight(){
+                container.setStyle({
+                    overflow:'visible',
+                    height:'auto'
+                })
+                containerH = container.height();
+                container.setStyle({
+                    overflow:'',
+                    height:''
+                })
+                containerH<H ? hideScrollBar():showScrollBar();
+                greyElm.setStyle({
+                    height:(H/containerH*H-8)+'px'
+                })
+                //greyEl
+
+            }
+
+            function hideScrollBar(){
+                JScrollElm.hide();
+            }
+            function showScrollBar(){
+                JScrollElm.show();
+            }
+
+            function getOffset(){
+                
+            }
+
+            function cancleBubble(e){
+               // e&&(e.stopPropagation?e.stopPropagation():(e.cancelBubble=true))
+                e&&e.stop()
+            }
+
+
+            function createScrollBar(){
+                var scrollBarContainer = document.createElement('div');
+                H =container.height()-8;
+                scrollBarContainer.className="Vscroll";
+                scrollBarContainer.innerHTML = '' +
+                        ' <div class="Vp1"></div>' +
+                        '<div class="VblockContainer" style="height: '+H+'px;">' +
+                            '<div class="Vblock">' +
+                                '<div class="VtAndl"></div>' +
+                                '<div class="Vmiddle" style=""></div>' +
+                                '<div class="VbAndr"></div>' +
+                            '</div>' +
+                        '</div>' +
+                        '<div class="Vp2"></div>';
+
+                return scrollBarContainer;
+            }
+
+            function buildPosition(){
+                var customeOffset,offset = container.offset();
+                customeOffset = (opts.buildPosition&&opts.buildPosition(opts.x,opts.y))||{};
+                var left =(offset.x+container.width())+(customeOffset.x || opts.x);
+                var top = offset.y+(customeOffset.y ||opts.y);
+
+                scrollObj.style.cssText='left:'+left +'px;top:'+offset.y+'px;position:absolute';
+
+            }
+
+        }
+
+        J.ui.scrollBar = scrollBar;
+    })(J.ui)
+    ;J.ui.scrollBar({
+        elm: J.g("map_content")
+    });
+
+</script>
+
+</body>
+</html>

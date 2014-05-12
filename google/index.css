@@ -1,0 +1,645 @@
+body{
+    color: #333;
+    font-family: Arial, "\5B8B\4F53", Helvetica, sans-serif;
+    font-size: 12px;
+}
+ul,li,dl,dd{
+    margin:0;
+    padding: 0;
+    list-style: none;
+}
+a:link, a:visited{
+    color: #0041d9;
+    text-decoration: none;
+}
+a:hover{
+    color: #f60;
+    text-decoration: underline;
+}
+.map_block .title {
+    font-size: 16px;
+    cursor: pointer;
+    color: #0041d9;
+}
+.title .hover{
+    color: #333;
+    font-weight: bold;
+    cursor: default;
+}
+.title .sep{
+    color: #999;
+    padding: 0 10px;
+}
+.map_block .c,#soso_view{
+    width: 1032px;
+    height: 366px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding:18px 25px 25px 21px;
+}
+#soso_small{
+    position: absolute;
+    bottom: 25px;
+    right: 25px;
+    width: 180px;
+    height: 130px;
+    z-index: 555;
+    border: 1px solid #A6A6A6;
+}
+.chks li{
+    float: left;
+    margin-right: 32px;
+    _margin-right: 34px;
+    font-size: 14px;
+}
+.chks li label{
+}
+.chks li .tip{
+    background: url("right_tip.png") 0 0 #62ab00;
+    padding: 8px;
+    line-height: 0;
+    height: 0;
+    position: relative;
+    top: 2px;
+    display: inline-block;
+    overflow: hidden;
+    font-size: 0;
+    background-color:#62ab00!important; ;
+    _left:-3px;
+
+}
+.map_block .l{
+    width: 640px;
+    height: 270px;
+    float: left;
+}
+.l #map_container{
+    width: 100%;
+    height: 270px;
+}
+.l .ms{
+    line-height: 23px;
+    text-indent: 18px;
+    border: 1px solid #e3e3e3;
+}
+.l .ms a{
+    margin-right: 1em;
+}
+.l .ms_l,.l .ms_r{
+    float: left;
+    width: 42%;
+}
+.l .ms_r{
+    width: 55%;
+}
+.l .addr_tip,.r .addr_tip{
+    padding-left: 15px;
+    background: url("tip.png") 0 -449px no-repeat;
+    margin-left: 1em;
+}
+.l .bottom{
+    border: 1px solid #e3e3e3;
+    padding: 7px;
+    padding-left: 15px;
+    background: #e3e3e3;
+}
+.l .bottom b{
+    font-size: 14px;
+}
+.l .bottom .begain,.l .bottom .end{
+    display: inline-block;
+    width: 190px;
+    height: 30px;
+    border: 1px solid #ccc;
+    background: #fff;
+    margin-left: 2px;
+}
+.begain label,.end label{
+    line-height: 30px;
+    padding-left: 3px;
+    border-left: 3px solid #fe6700;
+    height: 30px;
+    display: inline-block;
+    padding-right:3px;
+
+}
+.l .end label{
+    border-left: 3px solid #390;
+}
+.begain input,.end input{
+    vertical-align: middle;
+    border: none;
+    border-left:1px solid #ccc ;
+    height: 17px;
+    padding-left: 5px;
+    line-height: 17px;
+    width: 120px;
+    color: #333;
+}
+.l .change{
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url('tip.png') 7px -475px #ebebeb;
+    vertical-align: middle;
+    cursor: pointer;
+}
+.l input:focus{
+    outline: none;
+}
+.l .btn:link,.l .btn:visited{
+    display: inline-block;
+    width: 60px;
+    background-color: #62ab00;
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    height: 31px;
+    text-align: center;
+    line-height: 30px;
+    vertical-align: middle;
+    text-decoration: none;
+}
+.l .btn:hover{
+    background: #4a8200;
+}
+.map_block .auto{
+    overflow:hidden;
+    position: relative;
+
+}
+.map_block .chks{
+    -webkit-user-select:none;
+    margin-bottom: 8px;
+}
+.r{
+    height: 342px;
+    font-size: 12px;
+    width: 332px;
+    float: left;
+
+}
+#for_scroll .Vscroll{
+    float: left;
+}
+.r .scroll_obj{
+    height: 318px;
+    overflow-y:scroll;
+    overflow-x: hidden;
+
+}
+#for_scroll{
+    width: 360px;
+    display: inline-block;
+    margin-left: 30px;
+    _margin-left: 60px;
+
+}
+
+.r .tab{
+    border-bottom: 1px solid #dfdfdf;
+}
+.tab span{
+    width: 86px;
+    border:1px solid #dfdfdf;
+    display: inline-block;
+    line-height: 22px;
+    height: 22px;
+    text-align: center;
+    position: relative;
+    bottom: -1px;
+    cursor: pointer;
+    background: url("tip.png") 0 -620px #fbfbfb no-repeat;
+    text-indent: 1em;
+}
+.tab .bybus{
+    background-position: 22px -617px;
+}
+.tab .bycar{
+    background-position: 18px -651px;
+}
+
+.tab .hover{
+    border-bottom: 1px solid #fff;
+    background-color: #fff;
+    cursor: default;
+}
+.r .gre{
+    padding: 11px 0;
+    line-height: 23px;
+    position: relative;
+}
+.r .gre .g{
+    color: #60ab00;
+    font-weight: 700;
+}
+.r .gre .long{
+    margin-left: 20px;
+}
+.gre .right_tip{
+    width: 25px;
+    display: inline-block;
+    height: 11px;
+    background: url("tip.png") 0 -689px;
+}
+.way .begain,.way .end{
+    padding-left: 37px;
+    background: url("bus.png") 0 0 no-repeat;
+    line-height: 28px;
+    margin:6px 0;
+    font-weight: bold;
+
+}
+.way .end{
+    background-position: 0 -26px;
+}
+.way ul{
+    border-top:1px solid #e6e6e6;
+    margin-left: 37px;
+}
+.way li{
+    padding: 7px 0;
+    line-height: 22px;
+    border-bottom:1px solid #e6e6e6;
+    position: relative;
+}
+.way li a{
+    padding: 0 5px;
+}
+.r .select{
+    margin-bottom: 10px;
+}
+.r .select dd{
+    display: none;
+}
+.r .select .tit{
+    width: 227px;
+    display: block;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.r .select dt{
+    background: #fd9;
+    height: 30px;
+    line-height: 30px;
+    color: #f90;
+    font-weight: bold;
+    position: relative;
+    font-size: 14px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+   /* width: 339px;*/
+    padding-right: 40px;
+    padding-left: 70px;
+}
+.r .select label{
+    font-weight: 400;
+    padding-left: 25px;
+    line-height: 30px;
+    display: inline-block;
+    height: 30px;
+    position: absolute;
+    left: 5px;
+    top: 0;
+    background: url("tip.png") 0 -535px no-repeat;
+}
+.r .select dt .row{
+    position: absolute;
+    width: 10px;
+    cursor: pointer;
+    right: 20px;
+    top: 10px;
+    font-size: 0;
+    height: 8px;
+    background: url("tip.png") 0 -512px no-repeat;
+}
+.r .q dd{
+    display: block;
+}
+.r .q dt{
+    color: #5fab00;
+    background: #d5edb4;
+}
+.r .q dt .row{
+    display: none;
+}
+.r .q label{
+    background-position: 0 -575px;
+
+}
+.r dt .txt{
+    width: 230px;
+    text-overflow:ellipsis;
+    overflow: hidden;
+}
+.r .q dd{
+    position: relative;
+    line-height: 19px;
+    padding-right: 134px;
+    padding: 5px 0;
+}
+.r .select dd .tip:link,.r .select dd .tip:visited{
+    position: absolute;
+    right: 30px;
+    width: 82px;
+    height: 30px;
+    background: #62ab00;
+    text-align: center;
+    line-height: 30px;
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+    top: 9px;
+    display: none;
+}
+
+.way li .tip{
+    position: absolute;
+    right: 30px;
+    height: 30px;
+    line-height: 30px;
+    color: #7f7f7f;
+    top: 9px;
+}
+
+.r .select dd .tip:hover{
+    background:#4a8200;
+}
+.r .q .hover{
+    background: #f7f7f7;
+}
+.r .q .hover .tip:link,.r .q .hover .tip:hover,.r .q .hover .tip:visited{
+    display:inline-block ;
+}
+.r .select .select_item *{
+    width: 226px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    display: block;
+}
+.r .select_item div{
+    color: #999;
+}
+
+/**　普通项　begain **/
+.r .item{
+    margin-bottom: 16px;
+    position: relative;
+}
+.r .item dt{
+    font-size: 14px;
+    color: #333;
+    font-weight: bold;
+    border-bottom: 1px solid #ebebeb;
+    padding-bottom: 8px;
+}
+.r .item dd{
+    position: relative;
+    line-height: 22px;
+    padding: 7px 30px;
+    padding-right: 53px;
+    border-bottom: 1px dashed #ebebeb;
+}
+
+.r  .bus .tip{
+    background-position: 1px -417px;
+}
+
+.r .item label{
+    /*display: inline-block;*/
+}
+.r .item em{
+    position: absolute;
+    right: 10px;
+    font-style: normal;
+}
+.r .item .tip{
+    background: url("right_tip.png") 0px 0px #2fb1ff no-repeat;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    left: 0px;
+    _left:-30px;
+    top:9px;
+}
+.r .item .hover .tip{
+    background-color: #f90;
+}
+.r .item .hover{
+    background: #F7F7F7;
+}
+.r .traffic .tip,.chks  .trafic .tip{
+    background-position:2px 2px ;
+}
+.overlay .traffic{
+    background-position:4px 4px ;
+}
+.r .traffic .bus .tip{
+    background-position:1px -195px ;
+}
+.overlay .bus{
+    background-position:3px -193px ;
+}
+.r .school .tip,.chks  .school .tip{
+    background-position:1px -33px ;
+    background-color: #f60;
+}
+.overlay .school{
+    background-position:3px -31px ;
+    background-color: #f60;
+}
+.r .hospital .tip,.chks  .hospital .tip{
+    background-position:2px -64px ;
+    background-color: #ff4f4a;
+
+}
+.overlay .hospital{
+    background-position:4px -62px ;
+    background-color: #ff4f4a;
+}
+
+.r .restaurant .tip,.chks  .restaurant .tip{
+    background-position:2px -97px ;
+    background-color: #b7b;
+}
+.overlay .restaurant{
+    background-position:2px -95px ;
+    background-color: #b7b;
+}
+/*
+.chks  .trafic .tip {
+    background-position: 3px -25px;
+}
+.chks  .school .tip {
+    background-position: 0px -58px;
+}
+.chks  .hospital .tip {
+    background-position: 0px -720px;
+}
+.chks  .restaurant .tip {
+    background-position: 3px -25px;
+}
+.chks  .bank .tip {
+    background-position: 3px -153px;
+}
+.chks  .market .tip {
+    background-position: 1px -187px;
+}*/
+
+.r .bank .tip,.chks  .bank .tip {
+    background-position:2px -131px ;
+    background-color: #62ab00;
+
+}
+.overlay .bank{
+    background-position:4px -129px ;
+    background-color: #62ab00;
+
+}
+.r .market .tip,.chks  .market .tip{
+    background-position:0px -166px ;
+    background-color: #208a7d;
+
+}
+.overlay .market{
+    background-position:2px -164px ;
+    background-color: #208a7d;
+}
+#map_container .hover *{
+    background-color: #f60;
+}
+#map_container .hover{
+    z-index: 100!important;
+}
+ .overlay *{
+    width: 20px;
+    height: 20px;
+    background: url("right_tip.png") 0 0 #2fb1ff no-repeat;
+}
+.r .def{
+    width: 368px;
+    margin-left: 2px;
+    position: relative;
+    top:6px;
+}
+.auto .def{
+    display: none;
+}
+.r .region{
+    margin: 20px 0 40px 0;
+    position: relative;
+}
+.r .def .font_b{
+    font-size: 14px;
+    margin-bottom: 10px
+}
+.r .region em{
+    position: absolute;
+    right: 10px;
+    top: 0px;
+    font-style: normal;
+    font-size: 14px;
+}
+
+.r .region .btn:link,.r .region .btn:visited{
+    display: inline-block;
+    width: 156px;
+    height: 34px;
+    background: #ff8a3c;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    line-height: 34px;
+    font-size: 14px;
+    border-radius: 3px;
+    text-decoration: none;
+    margin-top: 10px;
+}
+.r .region .btn:hover{
+    background: #f60;
+}
+
+.overlay_comm{
+    color: #fff;
+    background: #f60;
+    line-height: 30px;
+    border: 1px solid #fff;
+    white-space: nowrap;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 0 10px;
+}
+.overlay_comm .tip{
+    background: url("tip.png") 0 -1px no-repeat;
+    position: absolute;
+    left: 7px;
+    top: 29px;
+    width: 15px;
+    height: 16px;
+    font-size: 0px;
+}
+.overlay_info .overlay_container{
+    white-space: nowrap;
+    background: #fff;
+    border: 1px solid #c9c9c9;
+    border-radius: 5px;
+    line-height: 20px;
+    padding:6px 9px 7px 10px;
+    position: relative;
+
+}
+.overlay_info .tip{
+    position: absolute;
+    background: url("right_tip.png") 0 -227px;
+    left: 22px;
+    _left:12px;
+    top: 51px;
+    height: 10px;
+    width: 18px;
+    font-size: 0px
+   
+}
+
+.map_block{
+    -moz-user-select: none; /*火狐*/
+    -webkit-user-select: none;  /*webkit浏览器*/
+    -ms-user-select: none;   /*IE10*/
+    -khtml-user-select: none; /*早期浏览器*/
+    user-select: none;
+    position: relative;
+    width: 1080px;
+}
+.area_view .soso_view,.area_view .soso_small{
+    display: none;
+}
+.map_block  .soso_view,.map_block  .soso_small{
+    display: block;
+}
+.map_block  .c{
+    display: none;
+}
+.area_view .c{
+    display: block;
+}
+#btnArea_map{
+    display: inline-block;
+    width: 68px;
+}
+/**　普通项　end **/
+
+.clearfix:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+}
+.clearfix { display: inline-table; }
+/* Hides from IE-mac \*/
+* html .clearfix { height: 1%; }
+.clearfix { display: block; }
+/* End hide from IE-mac */

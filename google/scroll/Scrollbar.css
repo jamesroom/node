@@ -1,0 +1,194 @@
+/*纵向*/
+.Vblock {
+	width: 9px;
+    margin:0 auto;
+    position: relative;
+}
+
+/*.Vcontent {
+	height: 200px;
+	width: 370px;
+	float: left;
+	overflow: hidden;
+	border: 1px solid red;
+}*/
+
+/*.Vcontent div {
+	margin-top: 4px;
+	margin-left: 4px;
+	height: 16px;
+	font-size: 14px;
+	color: #666;
+	width: 100%;
+	margin-bottom: 10px;
+}*/
+
+/*.Vcontentwrap {
+	height: 200px;
+	width: 400px;
+}*/
+
+.Vmiddle {
+	height: 17px;
+	width: 15px;
+}
+
+.VtAndl, .Vmiddle, .VbAndr, .Vp1, .VblockContainer, .Vp2 {
+	background-image: url("./scrollbarV.png");
+	font-size: 0;
+}
+
+.Vp1 {
+	background-position: 0 0;
+	height: 4px;
+}
+
+.Vp2 {
+	background-position: -72px 0;
+	height: 4px;
+}
+
+.VblockContainer {
+	background-position: -36px 0;
+	position: relative;
+}
+
+.VtAndl {
+	width: 9px;
+	height: 4px;
+	background-position: -108px 0;
+}
+
+.VbAndr {
+	width: 9px;
+	height: 4px;
+	background-position: -164px 0;
+}
+
+.Vmiddle {
+	width: 9px;
+	background-position: -136px 0;
+}
+/**/
+.VscrollHover .Vp1 {
+	background-position: -192px 0;
+}
+
+.VscrollHover .Vp2 {
+	background-position: -264px 0;
+}
+
+.VscrollHover .VblockContainer {
+	background-position: -228px 0;
+}
+
+
+.VscrollHover .VtAndl {
+	background-position: -300px 0;
+}
+
+.VscrollHover .VbAndr {
+	background-position: -356px 0;
+}
+
+.VscrollHover .Vmiddle {
+	background-position: -328px 0;
+}
+
+.Vscroll {
+	width: 17px;
+}
+
+/*横向*/
+/*.Hcontentwrap {
+	width:740px;
+	height:216px;
+	margin:0 auto;
+	
+}*/
+
+/*.Hcontent {
+	height:190px;
+	width:100%;
+	overflow:hidden;
+	border: 1px solid red;
+}*/
+
+.Hblock {
+	height:9px;
+	width:70px;
+	position: absolute;
+	top: 4px;
+}
+
+.HtAndl, .Hmiddle, .HbAndr, .Hp1, .HblockContainer, .Hp2 {
+	background-image: url('');
+	float: left;
+} 
+
+.Hp1 {
+	background-position: 0 0;
+	width: 4px;
+	height: 17px;
+}
+
+.Hp2 {
+	background-position: -1px -72px;
+	width: 4px;
+	height: 17px;
+}
+
+.HblockContainer {
+	position: relative;
+	background-position: 0 -36px;
+	position: relative;
+	height: 17px;
+}
+
+.HtAndl {
+	height: 9px;
+	width: 4px;
+	background-position: 0 -105px;
+	/*border: 1px solid black;*/
+}
+
+.HbAndr {
+	height: 9px;
+	width: 4px;
+	background-position: -1px -164px;
+	/*border: 1px solid black;*/
+}
+
+.Hmiddle {
+	height: 9px;
+	background-position: 0 -136px;
+	width: 100%;
+}
+
+.Hp1hover {
+	background-position: 0 -192px;
+}
+
+.Hp2hover {
+	background-position: -1px -265px;
+}
+
+.HblockContainerhover {
+	background-position: 0 -229px;
+}
+
+.HtAndlhover {
+	background-position: 0 -302px;
+}
+
+.HbAndrhover {
+	background-position: -1px -357px;
+}
+
+.Hmiddlehover {
+	background-position: 0 -329px;
+}
+
+.Hscroll {
+	height: 17px;
+}
